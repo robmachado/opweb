@@ -33,9 +33,9 @@
                 <label for="uni">Unidade</label><br>
                 <select name="uni" id="uni">
                     <option value="kg" selected>kg</option>
-                    <option value="pc">peça</option>
+                    <option value="un">un</option>
                     <option value="m">metro</option>
-                    <option value="mil">milheiro</option>
+                    <option value="mq">m&sup2;</option>
                 </select>
             </td>
             <td>
@@ -58,15 +58,16 @@
 </div>    
 <div id="tabs">
   <ul>
-    <li><a href="#tabs-1">Ficha Técnica</a></li>      
-    <li><a href="#tabs-2">Extrusão</a></li>
-    <li><a href="#tabs-3">Impressão</a></li>
-    <li><a href="#tabs-4">Bolha</a></li>
-    <li><a href="#tabs-5">Rebobinadeira</a></li>
-    <li><a href="#tabs-6">Corte/Solda</a></li>
-    <li><a href="#tabs-7">Co-Laminadora</a></li>
-    <li><a href="#tabs-8">Micro-Perfuradeira</a></li>
-    <li><a href="#tabs-9">Embalagem</a></li>
+    <li><a href="#tabs-1">Ficha Técnica</a></li>
+    <li><a href="#tabs-2">Matérias-Primas</a></li>
+    <li><a href="#tabs-3">Extrusão</a></li>
+    <li><a href="#tabs-4">Impressão</a></li>
+    <li><a href="#tabs-5">Bolha</a></li>
+    <li><a href="#tabs-6">Rebobinadeira</a></li>
+    <li><a href="#tabs-7">Corte/Solda</a></li>
+    <li><a href="#tabs-8">Co-Laminadora</a></li>
+    <li><a href="#tabs-9">Micro-Perfuradeira</a></li>
+    <li><a href="#tabs-10">Embalagem</a></li>
   </ul>
   <div id="tabs-1">
     <table>
@@ -123,7 +124,6 @@
                 <input class="right" type="text" id="ftgramnom" name="ftgramsnom" value="" size="8" placeholder="0,00">g/m&sup2;<br>
                 <label for="ftgrammax">Gramatura Máxima</label><br>
                 <input class="right" type="text" id="ftgrammax" name="ftgrammax" value="" size="8" placeholder="0,00">g/m&sup2;<br>
-                
             </td>
             <td width="10px"></td>
             <td>
@@ -207,7 +207,38 @@
       <table>
           <tr>
               <td>
-                  
+                <label for="mp1">Matéria-Prima 1</label><br>
+                <input type="text" id="mp1" name="mp1" value="" size="20" placeholder="Material">
+                <input class="right" type="text" id="mp1perc" name="mp1perc" value="" size="5" placeholder="0,00">%
+                <input class="right" type="text" id="mp1qtd" name="mp1qtd" value="" size="5" placeholder="0,00">kg<br>
+                <label for="mp2">Matéria-Prima 2</label><br>
+                <input type="text" id="mp1" name="mp2" value="" size="20" placeholder="Material">
+                <input class="right" type="text" id="mp2perc" name="mp2perc" value="" size="5" placeholder="0,00">%
+                <input class="right" type="text" id="mp2qtd" name="mp2qtd" value="" size="5" placeholder="0,00">kg<br>
+                <label for="mp3">Matéria-Prima 3</label><br>
+                <input type="text" id="mp3" name="mp3" value="" size="20" placeholder="Material">
+                <input class="right" type="text" id="mp3perc" name="mp3perc" value="" size="5" placeholder="0,00">%
+                <input class="right" type="text" id="mp3qtd" name="mp3qtd" value="" size="5" placeholder="0,00">kg<br>
+                <label for="mp4">Matéria-Prima 4</label><br>
+                <input type="text" id="mp4" name="mp4" value="" size="20" placeholder="Material">
+                <input class="right" type="text" id="mp4perc" name="mp4perc" value="" size="5" placeholder="0,00">%
+                <input class="right" type="text" id="mp4qtd" name="mp4qtd" value="" size="5" placeholder="0,00">kg<br>
+                <label for="mp5">Matéria-Prima 5</label><br>
+                <input type="text" id="mp5" name="mp1" value="" size="20" placeholder="Material">
+                <input class="right" type="text" id="mp5perc" name="mp5perc" value="" size="5" placeholder="0,00">%
+                <input class="right" type="text" id="mp5qtd" name="mp5qtd" value="" size="5" placeholder="0,00">kg<br>
+                <label for="mp6">Matéria-Prima 6</label><br>
+                <input type="text" id="mp6" name="mp6" value="" size="20" placeholder="Material">
+                <input class="right" type="text" id="mp6perc" name="mp6perc" value="" size="5" placeholder="0,00">%
+                <input class="right" type="text" id="mp6qtd" name="mp6qtd" value="" size="5" placeholder="0,00">kg<br>
+                <label for="mp7">Matéria-Prima 7</label><br>
+                <input type="text" id="mp7" name="mp7" value="" size="20" placeholder="Material">
+                <input class="right" type="text" id="mp7perc" name="mp7perc" value="" size="5" placeholder="0,00">%
+                <input class="right" type="text" id="mp7td" name="mp7qtd" value="" size="5" placeholder="0,00">kg<br>
+                <label for="mp8">Matéria-Prima 8</label><br>
+                <input type="text" id="mp8" name="mp8" value="" size="20" placeholder="Material">
+                <input class="right" type="text" id="mp8perc" name="mp8perc" value="" size="5" placeholder="0,00">%
+                <input class="right" type="text" id="mp8qtd" name="mp8qtd" value="" size="5" placeholder="0,00">kg<br>
               </td>
           </tr>
       </table>
@@ -215,13 +246,126 @@
   <div id="tabs-3">
       <table>
           <tr>
-              <td>
-                  
-              </td>
+            <td>
+                <label for="extlargmin">Largura Mínina</label><br>
+                <input class="right" type="text" id="extlargmin" name="extlargmin" value="" size="8" placeholder="0,00">mm<br>
+                <label for="extlargnom">Largura Nominal</label><br>
+                <input class="right" type="text" id="extlargnom" name="extlargnom" value="" size="8" placeholder="0,00">mm<br>
+                <label for="extlargmax">Largura Máxima</label><br>
+                <input class="right" type="text" id="extlargmax" name="extlargmax" value="" size="8" placeholder="0,00">mm<br>
+            </td>
+            <td width="10px"></td>
+            <td>
+                <label for="extespsmin">Espessura Mín. parede </label><br>
+                <input class="right" type="text" id="extespesmin" name="extespesmin" value="" size="8" placeholder="0,00">mm<br>
+                <label for="extespsnom">Espessura Nom. parede</label><br>
+                <input class="right" type="text" id="extespesnom" name="extespesnom" value="" size="8" placeholder="0,00">mm<br>
+                <label for="extespesmax">Espessura Máx. parede</label><br>
+                <input class="right" type="text" id="extespesmax" name="extespesmax" value="" size="8" placeholder="0,00">mm<br>
+            </td>
+            <td width="10px"></td>
+            <td>
+                <label for="extsanfmin">SANFONA Mínina</label><br>
+                <input class="right" type="text" id="extsanfmin" name="extsanfmin" value="" size="8" placeholder="0,00">mm<br>
+                <label for="extsanfnom">SANFONA Nominal</label><br>
+                <input class="right" type="text" id="extsanfnom" name="extsanfnom" value="" size="8" placeholder="0,00">mm<br>
+                <label for="extsanfmax">SANFONA Máxima</label><br>
+                <input class="right" type="text" id="extsnafmax" name="extsanfmax" value="" size="8" placeholder="0,00">mm<br>
+            </td>
+            <td width="10px"></td>
+            <td>
+                <label for="extgrammin">Gramametro Mínino</label><br>
+                <input class="right" type="text" id="extgrammin" name="extgrammin" value="" size="8" placeholder="0,00">g/m<br>
+                <label for="extgremnom">Gramametro Nominal</label><br>
+                <input class="right" type="text" id="extgramnom" name="extgramsnom" value="" size="8" placeholder="0,00">g/m<br>
+                <label for="extgrammax">Gramametro Máximo</label><br>
+                <input class="right" type="text" id="extgrammax" name="extgrammax" value="" size="8" placeholder="0,00">g/m<br>
+            </td>
+            <td width="10px"></td>
+            <td>
+                <label for="extmatriz">Matriz</label><br>
+                <input type="text" id="extmatriz" name="extmatriz" value="" size="20" placeholder="Matriz a ser usada"><br>
+                <label for="extrazao">Razão de Sopro</label><br>
+                <input type="text" id="extrazao" name="extrazao" value="" size="20" placeholder="Razão de Sopro"><br>
+                <label for="exttipobob">Tipo de Bobina</label><br>
+                <select name="exttipobob" id="exttipobob">
+                    <option value="S" selected>Simples</option>
+                    <option value="T">Técnica</option>
+                    <option value="I">Infestada</option>
+                    <option value="F">Sanfonada</option>
+                    <option value="P">Picotada</option>
+                </select><br>
+                <label for="extmaq">Maquina</label><br>
+                <input type="text" id="extmaq" name="extmaq" value="" size="20" placeholder="Identificação da Maquina">
+            </td>
+            <td width="10px"></td>
+            <td>
+                <label for="extmettot">Metragem Total</label><br>
+                <input class="right" type="text" id="extmettot" name="extmettot" value="" size="8" placeholder="00000">m<br>
+                <label for="extnumbob">Numero de Bobinas</label><br>
+                <input class="right" type="text" id="extnumbob" name="extnumbob" value="" size="3" placeholder="000"><br>
+                <label for="extmetbob">Metragem por Bobina</label><br>
+                <input class="right" type="text" id="extmetbob" name="extmetbob" value="" size="8" placeholder="00000">m<br>
+                <label for="extpesotot">Peso Total</label><br>
+                <input class="right" type="text" id="extpesotot" name="extpesotot" value="" size="8" placeholder="0,00">kg<br>
+                <label for="extpesobob">Peso por Bobina</label><br>
+                <input class="right" type="text" id="extpesobob" name="extpesobob" value="" size="8" placeholder="0,00">kg<br>
+            </td>
+            <td width="10px"></td>
+            <td>
+                <label for="extdiammax">Diâmetro Máximo</label><br>
+                <input class="right" type="text" id="extdiammax" name="extdiammax" value="" size="8" placeholder="0,00">mm<br>
+                <label for="extprtvde">Produtividade</label><br>
+                <input class="right" type="text" id="extprtvde" name="extprtvde" value="" size="5" placeholder="0,0">kg/min<br>
+                <label for="extperdas">Perdas de Processo</label><br>
+                <input class="right" type="text" id="extperdas" name="extperdas" value="" size="8" placeholder="0,00">%<br>
+            </td>
+            <td width="10px"></td>
+            <td>
+                <label for="exttratamento">Tratamento</label><br>
+                <input type="text" id="exttratamento" name="exttratamento" value="" size="25" placeholder="Tratamento de superficie"><br>
+                <label for="extmapa">Mapa de Tratamento</label><br>
+                <input class="right" type="text" id="extmapa1" name="extmapa1" value="" size="3" placeholder="000">
+                <input class="right" type="text" id="extmapa2" name="extmapa1" value="" size="3" placeholder="000">
+                <input class="right" type="text" id="extmapa3" name="extmapa1" value="" size="3" placeholder="000">
+                <input class="right" type="text" id="extmapa4" name="extmapa1" value="" size="3" placeholder="000">
+                <input class="right" type="text" id="extmapa5" name="extmapa1" value="" size="3" placeholder="000">
+                <input class="right" type="text" id="extmapa6" name="extmapa1" value="" size="3" placeholder="000">
+                <input class="right" type="text" id="extmapa7" name="extmapa1" value="" size="3" placeholder="000">
+                <input class="right" type="text" id="extmapa8" name="extmapa1" value="" size="3" placeholder="000">
+            </td>
+          </tr>  
+          <tr>
+            <td colspan="15">
+                <label for="extpobs">Observações</label><br>
+                <textarea name="extpobs" id="extpobs" maxlength="500" rows="3" cols="120" placeholder="Observações da extrusão, esse campo será impresso na OP"></textarea>
+            </td>
           </tr>
       </table>
   </div>
   <div id="tabs-4">
+      <table>
+          <tr>
+            <td>
+                <label for="impcilindro">Cilindro</label><br>
+                <input type="text" id="impcilindro" name="impcilindro" value="" size="25" placeholder="Identificação do cilindro"><br>
+                <label for="impsentidobob">Sentido de Bobinamento</label><br>
+                <input type="text" id="impsentidobob" name="impsentidobob" value="" size="25" placeholder="Sentido de Bobinamento"><br>
+                <label for="impprtvde">Produtividade</label><br>
+                <input class="right" type="text" id="impprtvde" name="impprtvde" value="" size="5" placeholder="0,0">kg/min<br>
+                <label for="impperdas">Perdas de Processo</label><br>
+                <input class="right" type="text" id="impperdas" name="impperdas" value="" size="8" placeholder="0,00">%<br>
+            </td>  
+            <td>
+                <label for="impmaq">Maquina</label><br>
+                <input type="text" id="impmaq" name="impmaq" value="" size="25" placeholder="Identificação da Maquina"><br>
+                <label for="impobs">Observações</label><br>
+                <textarea name="impobs" id="impobs" maxlength="500" rows="6" cols="80" placeholder="Observações da impressão, esse campo será impresso na OP"></textarea>
+            </td>
+          </tr>
+      </table>
+  </div>
+  <div id="tabs-5">
       <table>
           <tr>
             <td>
@@ -269,21 +413,41 @@
           </tr>
       </table>
   </div>
-  <div id="tabs-5">
+  <div id="tabs-6">
       <table>
           <tr>
             <td>
-                  
+                <label for="reblargmin">Largura Mínina</label><br>
+                <input class="right" type="text" id="reblargmin" name="reblargmin" value="" size="8" placeholder="0,00">mm<br>
+                <label for="reblargnom">Largura Nominal</label><br>
+                <input class="right" type="text" id="reblargnom" name="reblargnom" value="" size="8" placeholder="0,00">mm<br>
+                <label for="reblargmax">Largura Máxima</label><br>
+                <input class="right" type="text" id="reblargmax" name="reblargmax" value="" size="8" placeholder="0,00">mm<br>
             </td>
             <td width="10px"></td>
             <td>
+                <label for="reblargini">Largura Inicial</label><br>
+                <input class="right" type="text" id="reblargini" name="reblargini" value="" size="8" placeholder="0,00">mm<br>
+                <label for="rebsentidobob">Sentido do Bobinamento</label><br>
+                <input type="text" id="rebsentidobob" name="rebsentidobob" value="" size="25" placeholder="Sentido do bobinamento"><br>
+                <label for="rebdiamax">Diâmeto Máximo</label><br>
+                <input class="right" type="text" id="rebdiamax" name="rebdiamax" value="" size="8" placeholder="0,00">mm<br>
+                <label for="rebmetbob">Metragem por Bobina</label><br>
+                <input class="right" type="text" id="rebmetbob" name="rebmetbob" value="" size="8" placeholder="00000">m<br>
+                <label for="rebpesobob">Peso por Bobina</label><br>
+                <input class="right" type="text" id="rebpesobob" name="rebpesobob" value="" size="8" placeholder="0,00">kg<br>
+            </td>
+            <td width="10px"></td>
+            <td>
+                <label for="rebmaq">Maquina</label><br>
+                <input type="text" id="rebmaq" name="rebmaq" value="" size="25" placeholder="Identificação da Maquina"><br>
                 <label for="rebobs">Observações</label><br>
                 <textarea name="rebobs" id="rebobs" maxlength="500" rows="6" cols="80" placeholder="Observações da rebobinadeira, esse campo será impresso na OP"></textarea>
             </td>
           </tr>
       </table>
   </div>
-  <div id="tabs-6">
+  <div id="tabs-7">
       <table>
           <tr>
             <td>
@@ -343,13 +507,15 @@
             </td>
             <td width="10px"></td>
             <td>
+                <label for="csmaq">Maquina</label><br>
+                <input type="text" id="csmaq" name="csmaq" value="" size="25" placeholder="Identificação da Maquina"><br>
                 <label for="csobs">Observações</label><br>
                 <textarea name="csobs" id="csobs" maxlength="500" rows="6" cols="60" placeholder="Observações do Corte e Solda, esse campo será impresso na OP"></textarea>
             </td>
           </tr>
       </table>
   </div>
-  <div id="tabs-7">
+  <div id="tabs-8">
       <table>
           <tr>
             <td>
@@ -378,23 +544,27 @@
             </td>
             <td width="10px"></td>
             <td>
+                <label for="colmaq">Maquina</label><br>
+                <input type="text" id="colmaq" name="colmaq" value="" size="25" placeholder="Identificação da Maquina"><br>
                 <label for="colamobs">Observações</label><br>
                 <textarea name="colamobs" id="colamobs" maxlength="500" rows="6" cols="80" placeholder="Observações da colaminadora, esse campo será impresso na OP"></textarea>
             </td>
           </tr>
       </table>
   </div>
-  <div id="tabs-8">
+  <div id="tabs-9">
       <table>
           <tr>
               <td>
+                <label for="mperfmaq">Maquina</label><br>
+                <input type="text" id="mperfmaq" name="mperfmaq" value="" size="25" placeholder="Identificação da Maquina"><br>
                 <label for="mperfobs">Observações</label><br>
                 <textarea name="mperfobs" id="mperfobs" maxlength="500" rows="6" cols="80" placeholder="Observações da micro-perfuradeira, esse campo será impresso na OP"></textarea>
               </td>
           </tr>
       </table>
   </div>
-  <div id="tabs-9">
+  <div id="tabs-10">
       <table>
           <tr>
               <td>
