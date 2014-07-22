@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>Ordem de Producao</title>
-  <link rel="stylesheet" href="libs/jquery/themes/smoothness/jquery-ui.css">
-  <script src="libs/jquery/jquery-2.1.1.js"></script>
-  <script src="libs/jquery/jquery-ui-1.11.0/jquery-ui.js"></script>
+  <link rel="stylesheet" href="../../libs/jquery/themes/smoothness/jquery-ui.css">
+  <script src="../../libs/jquery/jquery-2.1.1.js"></script>
+  <script src="../../libs/jquery/jquery-ui-1.11.0/jquery-ui.js"></script>
   <link rel="stylesheet" href="style.css">
   <script>
   $(function() {
