@@ -1,5 +1,13 @@
+<?php
+$op_id = '';
+$op_prazo = '';
+$prod_cod = '';
+$prod_desc = '';
+
+
+?>
 <!doctype html>
-<html lang="en">
+<html lang="pt_BR">
 <head>
   <meta charset="utf-8">
   <title>Ordem de Producao</title>
@@ -8,31 +16,34 @@
   <script src="../../libs/jquery/jquery-ui-1.11.0/jquery-ui.js"></script>
   <link rel="stylesheet" href="style.css">
   <script>
-  $(function() {
-    $( "#tabs" ).tabs();
-  });
+    $(function() {
+        $("#tabs").tabs();
+    });
   </script>
 </head>
 <body>
-<form>
+<form name="formOP" action="gravarOP.php" method="post">
+    <input type="hidden" name="op_id" id="op_id" value="<?=$op_id;?>">    
 <div>
-    <h2 align="center">Dados da OP<h2>
-    <table>
-        <tr>
-            <td>
-                <label for="codprod">Código do Produto</label><br>
-                <input type="text" id="codprod" name="codprod" value="" size="15" placeholder="Código do Produto"><input type="button" id="buscaprod" name="buscaprod" value="Busca"><br>
-                <label for="desc">Descrição</label><br>
-                <textarea name="desc" id="desc" maxlength="100" rows="3" placeholder="Descrição do produto"></textarea>
-            </td>
-            <td>
+<fieldset>
+<legend>Dados da OP</legend>
+<table>
+    <tr>
+        <td>
+            <label for="prod_cod">Código do Produto</label><br>
+            <input type="text" id="prod_cod" name="prod_cod" value="<?=$prod_cod;?>" size="15" placeholder="Código do Produto">
+            <input type="button" id="buscaprod" name="buscaprod" value="Busca"><br>
+            <label for="prod_desc">Descrição</label><br>
+            <textarea name="prod_desc" id="desc" maxlength="100" rows="3" placeholder="Descrição do produto"><?=$prod_desc;?></textarea>
+        </td>
+        <td>
                 <label for="pedido">Pedido Interno</label><br>
                 <input type="text" id="pedido" name="pedido" value="" placeholder="Numero Pedido"><br>
                 <label for="qtdade">Quantidade</label><br>
                 <input class="right" type="text" id="qtdade" name="qtdade" value="" placeholder="Quantidade"><br>
                 <label for="uni">Unidade</label><br>
                 <select name="uni" id="uni">
-                    <option value="kg" selected>kg</option>
+                    <option value="kg">kg</option>
                     <option value="un">un</option>
                     <option value="m">metro</option>
                     <option value="mq">m&sup2;</option>
@@ -42,19 +53,26 @@
                 <label for="client">Cliente</label><br>
                 <input type="text" id="client" name="client" value="" placeholder="Nome Cliente"><br>
                 <label for="pedcli">Pedido do Cliente</label><br>
-                <input type="text" id="pecli" name="pecli" value="" placeholder="Numero Ped. Cliente"><br>
+                <input type="text" id="pecli" name="pecli" value="" placeholder="Número Ped. Cliente"><br>
                 <label for="prodcli">Produto do Cliente</label><br>
                 <input type="text" id="prodcli" name="prodcli" value="" placeholder="Cod. produto Cliente">
             </td>
             <td>
-                <label for="opnum">Numero da OP</label><br>
-                <input type="text" id="opnum" name="opnum" value="" placeholder="Numero OP"><input type="button" id="buscaop" name="buscaop" value="Busca"><br>
+                <label for="opnum">Número da OP</label><br>
+                <input type="text" id="opnum" name="opnum" value="<?=$op_id;?>" <?=$ophabilita;?> placeholder="Número OP"><input type="button" id="btn_BuscaOP" name="btn_BuscaOP" value="Busca"><br>
                 <label for="prazo">Prazo de Entrega</label><br>
-                <input type="text" id="prazo" name="prazo" value="" placeholder="data entrega"><br>
-                <input type="submit" value="Gravar">         <input type="button" value="Imprimir">      <input type="button" value="Deletar"> 
+                <input type="text" id="op_prazo" name="op_prazo" value="<?=$op_prazo;?>" placeholder="Data de Entrega"><br>
             </td>
         </tr>
+      <tr>
+      
+            <td><input type="submit" value="Gravar"></td>
+            <td><input type="button" value="Imprimir" OnClick="javaprint();"></td>
+            <td><input type="button" value="Limpar/Nova" OnClick="javaclean();"></td>
+            <td><input type="button" value="Deletar" OnClick="javadelete();"></td>
+        </tr>
     </table>
+    </fieldset>
 </div>    
 <div id="tabs">
   <ul>
