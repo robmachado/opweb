@@ -6,11 +6,11 @@
 
 class DBase
 {
-    public $host = ''; //"192.168.0.2";
+    public $host = 'localhost'; //"192.168.0.2";
     public $port = ''; //"1433";
-    public $db = ''; //"testing";
-    public $user = ''; //"Sa";
-    public $pass = ''; //"";
+    public $db = 'opweb'; //"testing";
+    public $user = 'root'; //"Sa";
+    public $pass = 'monitor5'; //"";
     public $myparam = 'array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"))';
     public $dsn = '';
     public $lastId = 0;

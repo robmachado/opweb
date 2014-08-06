@@ -1,11 +1,3 @@
-<?php
-$op_id = '';
-$op_prazo = '';
-$prod_cod = '';
-$prod_desc = '';
-
-
-?>
 <!doctype html>
 <html lang="pt_BR">
 <head>
@@ -32,47 +24,46 @@ $prod_desc = '';
         <td>
             <label for="prod_cod">Código do Produto</label><br>
             <input type="text" id="prod_cod" name="prod_cod" value="<?=$prod_cod;?>" size="15" placeholder="Código do Produto">
-            <input type="button" id="buscaprod" name="buscaprod" value="Busca"><br>
+            <input type="button" id="buscaprod" name="buscaprod" value="Busca" OnClick="ajaxBuscaProd();"><br>
             <label for="prod_desc">Descrição</label><br>
             <textarea name="prod_desc" id="desc" maxlength="100" rows="3" placeholder="Descrição do produto"><?=$prod_desc;?></textarea>
         </td>
         <td>
                 <label for="pedido">Pedido Interno</label><br>
-                <input type="text" id="pedido" name="pedido" value="" placeholder="Numero Pedido"><br>
+                <input type="text" id="pedido" name="pedido" value="<?=$ped_int;?>" placeholder="Numero Pedido"><br>
                 <label for="qtdade">Quantidade</label><br>
-                <input class="right" type="text" id="qtdade" name="qtdade" value="" placeholder="Quantidade"><br>
+                <input class="right" type="text" id="qtdade" name="qtdade" value="<?=$qtdade;?>" placeholder="Quantidade"><br>
                 <label for="uni">Unidade</label><br>
                 <select name="uni" id="uni">
-                    <option value="kg">kg</option>
-                    <option value="un">un</option>
-                    <option value="m">metro</option>
-                    <option value="mq">m&sup2;</option>
+                    <option value="kg" <?=$selKG;?>>kg</option>
+                    <option value="un" <?=$selUN;?>>un</option>
+                    <option value="m" <?=$selM;?>>metro</option>
+                    <option value="mq" <?=$selM2;?>>m&sup2;</option>
                 </select>
             </td>
             <td>
                 <label for="client">Cliente</label><br>
-                <input type="text" id="client" name="client" value="" placeholder="Nome Cliente"><br>
+                <input type="text" id="client" name="client" value="<?=$client_name;?>" placeholder="Nome Cliente"><br>
                 <label for="pedcli">Pedido do Cliente</label><br>
-                <input type="text" id="pecli" name="pecli" value="" placeholder="Número Ped. Cliente"><br>
+                <input type="text" id="pecli" name="pecli" value="<?=$ped_cli;?>" placeholder="Número Ped. Cliente"><br>
                 <label for="prodcli">Produto do Cliente</label><br>
                 <input type="text" id="prodcli" name="prodcli" value="" placeholder="Cod. produto Cliente">
             </td>
             <td>
                 <label for="opnum">Número da OP</label><br>
-                <input type="text" id="opnum" name="opnum" value="<?=$op_id;?>" <?=$ophabilita;?> placeholder="Número OP"><input type="button" id="btn_BuscaOP" name="btn_BuscaOP" value="Busca"><br>
+                <input type="text" id="opnum" name="opnum" value="<?=$op_id;?>" <?=$ophabilita;?> placeholder="Número OP"><input type="button" id="btn_BuscaOP" name="btn_BuscaOP" value="Busca" OnClick="ajaxBuscaOP();"><br>
                 <label for="prazo">Prazo de Entrega</label><br>
                 <input type="text" id="op_prazo" name="op_prazo" value="<?=$op_prazo;?>" placeholder="Data de Entrega"><br>
             </td>
         </tr>
-      <tr>
-      
-            <td><input type="submit" value="Gravar"></td>
-            <td><input type="button" value="Imprimir" OnClick="javaprint();"></td>
-            <td><input type="button" value="Limpar/Nova" OnClick="javaclean();"></td>
-            <td><input type="button" value="Deletar" OnClick="javadelete();"></td>
-        </tr>
+    <tr>
+        <td><input type="submit" value="Gravar"></td>
+        <td><input type="button" value="Imprimir" OnClick="javaPrintOP();"></td>
+        <td><input type="button" value="Limpar/Nova" OnClick="javaCleanOP();"></td>
+        <td><input type="button" value="Deletar" OnClick="javaDeleteOP();"></td>
+    </tr>
     </table>
-    </fieldset>
+</fieldset>
 </div>    
 <div id="tabs">
   <ul>
@@ -92,26 +83,26 @@ $prod_desc = '';
         <tr>
             <td>
                 <label for="ftcodprod">Código do Produto</label><br>
-                <input type="text" id="ftcodprod" name="ftcodprod" value="" size="15" placeholder="código" disabled><br>
+                <input type="text" id="ftcodprod" name="ftcodprod" value="<?=$prod_cod;?>" size="15" placeholder="código" disabled><br>
                 <label for="ftdesc">Descrição</label><br>
-                <textarea name="ftdesc" id="ftdesc" maxlength="100" rows="3" placeholder="Descrição do produto" disabled></textarea>
+                <textarea name="ftdesc" id="ftdesc" maxlength="100" rows="3" placeholder="Descrição do produto" disabled><?=$prod_desc;?></textarea>
             </td>
             <td>
                 <label for="ftclient">Cliente</label><br>
-                <input type="text" id="ftclient" name="ftclient" value="" placeholder="Nome Cliente" disabled><br>
+                <input type="text" id="ftclient" name="ftclient" value="<?=$client_name;?>" placeholder="Nome Cliente" disabled><br>
                 <label for="ftprodcli">Produto do Cliente</label><br>
-                <input type="text" id="ftprodcli" name="ftprodcli" value="" placeholder="Cod. Prod. Cliente" disabled><br>
+                <input type="text" id="ftprodcli" name="ftprodcli" value="<?=$prod_cli;?>" placeholder="Cod. Prod. Cliente" disabled><br>
             </td>
             <td>
                 <label for="ftdesenv">Numero do desenvolvimento</label><br>
-                <input type="text" id="ftdesenv" name="ftdesenv" value="" placeholder="Numero Desenvolvimento"><br>
+                <input type="text" id="ftdesenv" name="ftdesenv" value="<?=$devel_num;?>" placeholder="Numero Desenvolvimento"><br>
                 <label for="ftgtin">GTIN</label><br>
-                <input type="text" id="ftgtin" name="ftgtin" value="" placeholder="Código Barras"><br>
-                <input type="checkbox" id="ftimpobs" name="ftimpobs" value="1">Imprimir OBS
+                <input type="text" id="ftgtin" name="ftgtin" value="<?=$barcode;?>" placeholder="Código Barras"><br>
+                <input type="checkbox" id="ftprintobs" name="ftprintobs" value="1">Imprimir OBS
             </td>
             <td>
                 <label for="ftobs">Observações</label><br>
-                <textarea name="ftobs" id="ftobs" maxlength="500" rows="6" cols="60" placeholder="Observações da ficha técnica esses dados não serão impressos a menos que indicado para"></textarea>
+                <textarea name="ftobs" id="ftobs" maxlength="500" rows="6" cols="60" placeholder="Observações da ficha técnica esses dados não serão impressos a menos que indicado para"><?=$ft_obs;?></textarea>
             </td>
         </tr>
         </table>
@@ -119,65 +110,65 @@ $prod_desc = '';
         <tr>
             <td>
                 <label for="ftlargmin">Largura Mínina</label><br>
-                <input class="right" type="text" id="ftlargmin" name="ftlargmin" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftlargmin" name="ftlargmin" value="<?=$ftlargmin;?>" size="8" placeholder="0,00">mm<br>
                 <label for="ftlargnom">Largura Nominal</label><br>
-                <input class="right" type="text" id="ftlargnom" name="ftlargnom" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftlargnom" name="ftlargnom" value="<?=$ftlargnom;?>" size="8" placeholder="0,00">mm<br>
                 <label for="ftlargmax">Largura Máxima</label><br>
-                <input class="right" type="text" id="ftlargmax" name="ftlargmax" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftlargmax" name="ftlargmax" value="<?=$ftlargmax;?>" size="8" placeholder="0,00">mm<br>
             </td>
             <td width="10px"></td>
             <td>
                 <label for="ftespsmin">Espessura Mínina</label><br>
-                <input class="right" type="text" id="ftespesmin" name="ftespesmin" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftespesmin" name="ftespesmin" value="<?=$ftespesmin;?>" size="8" placeholder="0,00">mm<br>
                 <label for="ftespsnom">Espessura Nominal</label><br>
-                <input class="right" type="text" id="ftespesnom" name="ftespesnom" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftespesnom" name="ftespesnom" value="<?=$ftespesnom;?>" size="8" placeholder="0,00">mm<br>
                 <label for="ftespesmax">Espessura Máxima</label><br>
-                <input class="right" type="text" id="ftespesmax" name="ftespesmax" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftespesmax" name="ftespesmax" value="<?=$ftespesmax;?>" size="8" placeholder="0,00">mm<br>
             </td>
             <td width="10px"></td>
             <td>
                 <label for="ftgrammin">Gramatura Mínina</label><br>
-                <input class="right" type="text" id="ftgrammin" name="ftgrammin" value="" size="8" placeholder="0,00">g/m&sup2;<br>
+                <input class="right" type="text" id="ftgrammin" name="ftgrammin" value="<?=$ftgrammin;?>" size="8" placeholder="0,00">g/m&sup2;<br>
                 <label for="ftgremnom">Gramatura Nominal</label><br>
-                <input class="right" type="text" id="ftgramnom" name="ftgramsnom" value="" size="8" placeholder="0,00">g/m&sup2;<br>
+                <input class="right" type="text" id="ftgramnom" name="ftgramsnom" value="<?=$ftgramnom;?>" size="8" placeholder="0,00">g/m&sup2;<br>
                 <label for="ftgrammax">Gramatura Máxima</label><br>
-                <input class="right" type="text" id="ftgrammax" name="ftgrammax" value="" size="8" placeholder="0,00">g/m&sup2;<br>
+                <input class="right" type="text" id="ftgrammax" name="ftgrammax" value="<?=$ftgrammax;?>" size="8" placeholder="0,00">g/m&sup2;<br>
             </td>
             <td width="10px"></td>
             <td>
                 <label for="ftcompmin">Comprimento Mínino</label><br>
-                <input class="right" type="text" id="ftcompmin" name="ftcompmin" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftcompmin" name="ftcompmin" value="<?=$ftcompmin;?>" size="8" placeholder="0,00">mm<br>
                 <label for="ftcompnom">Comprimento Nominal</label><br>
-                <input class="right" type="text" id="ftcompnom" name="ftcompnom" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftcompnom" name="ftcompnom" value="<?=$ftcompmin;?>" size="8" placeholder="0,00">mm<br>
                 <label for="ftcompmax">Comprimento Máximo</label><br>
-                <input class="right" type="text" id="ftcompmax" name="ftcompmax" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftcompmax" name="ftcompmax" value="<?=$ftcompmin;?>" size="8" placeholder="0,00">mm<br>
             </td>
             <td width="10px"></td>
             <td>
                 <label for="ftabamin">ABA Mínina</label><br>
-                <input class="right" type="text" id="ftabamin" name="ftabamin" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftabamin" name="ftabamin" value="<?=$ftabamin;?>" size="8" placeholder="0,00">mm<br>
                 <label for="ftabanom">ABA Nominal</label><br>
-                <input class="right" type="text" id="ftabanom" name="ftabanom" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftabanom" name="ftabanom" value="<?=$ftabanom;?>" size="8" placeholder="0,00">mm<br>
                 <label for="ftabamax">ABA Máxima</label><br>
-                <input class="right" type="text" id="ftabamax" name="ftabamax" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftabamax" name="ftabamax" value="<?=$ftabamax;?>" size="8" placeholder="0,00">mm<br>
             </td>
             <td width="10px"></td>
             <td>
                 <label for="ftsanfmin">SANFONA Mínina</label><br>
-                <input class="right" type="text" id="ftsanfmin" name="ftsanfmin" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftsanfmin" name="ftsanfmin" value="<?=$ftsanfmin;?>" size="8" placeholder="0,00">mm<br>
                 <label for="ftsanfnom">SANFONA Nominal</label><br>
-                <input class="right" type="text" id="ftsanfnom" name="ftsanfnom" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftsanfnom" name="ftsanfnom" value="<?=$ftsanfnom;?>" size="8" placeholder="0,00">mm<br>
                 <label for="ftsanfmax">SANFONA Máxima</label><br>
-                <input class="right" type="text" id="ftsnafmax" name="ftsanfmax" value="" size="8" placeholder="0,00">mm<br>
+                <input class="right" type="text" id="ftsnafmax" name="ftsanfmax" value="<?=$ftsanfmax;?>" size="8" placeholder="0,00">mm<br>
             </td>
             <td width="10px"></td>
             <td>
                 <label for="ftpesomin">Peso Mínino</label><br>
-                <input class="right" type="text" id="ftpesomin" name="ftpesomin" value="" size="8" placeholder="0,00">g<br>
+                <input class="right" type="text" id="ftpesomin" name="ftpesomin" value="<?=$ftpesomin;?>" size="8" placeholder="0,00">g<br>
                 <label for="ftpesonom">Peso Nominal</label><br>
-                <input class="right" type="text" id="ftpesonom" name="ftpesonom" value="" size="8" placeholder="0,00">g<br>
+                <input class="right" type="text" id="ftpesonom" name="ftpesonom" value="<?=$ftpesonom;?>" size="8" placeholder="0,00">g<br>
                 <label for="ftpesomax">Peso Máximo</label><br>
-                <input class="right" type="text" id="ftpesomax" name="ftpesomax" value="" size="8" placeholder="0,00">g<br>
+                <input class="right" type="text" id="ftpesomax" name="ftpesomax" value="<?=$ftpesomax;?>" size="8" placeholder="0,00">g<br>
             </td>
         </tr>
     </table>
@@ -185,15 +176,15 @@ $prod_desc = '';
         <tr>
             <td>
                 <label for="ftsolda">Tipo de Solda</label><br>
-                <textarea name="ftsolda" id="ftsolda" maxlength="500" rows="6" cols="40" placeholder="Observações para Corte/Solda"></textarea>
+                <textarea name="ftsoldaobs" id="ftsoldaobs" maxlength="500" rows="6" cols="40" placeholder="Observações para Corte/Solda"><?=$ftsoldaobs;?></textarea>
             </td>
             <td>
                 <label for="ftimp">Impressão (cores)</label><br>
-                <textarea name="ftimps" id="ftimp" maxlength="500" rows="6" cols="40" placeholder="Observações para Impressão"></textarea>
+                <textarea name="ftimpobs" id="ftimpobs" maxlength="500" rows="6" cols="40" placeholder="Observações para Impressão"><?=$ftimpobs;?></textarea>
             </td>
             <td>
                 <label for="ftalert">Alertas</label><br>
-                <textarea name="ftalert" id="ftalert" maxlength="500" rows="6" cols="40" placeholder="Observações de Alerta, esse campo será impresso na OP"></textarea>
+                <textarea name="ftalert" id="ftalert" maxlength="500" rows="6" cols="40" placeholder="Observações de Alerta, esse campo será impresso na OP"><?=$ftalert;?></textarea>
             </td>
         </tr>
         <tr>
@@ -202,17 +193,17 @@ $prod_desc = '';
                     <tr>
                         <td>
                 <label for="ftversao">Versão</label><br>
-                <input type="text" id="ftversao" name="ftversao" value="" size="4"  placeholder="00"><br>
+                <input type="text" id="ftversao" name="ftversao" value="<?=$ftversao;?>" size="4"  placeholder="00"><br>
                         </td><td>
                 <label for="ftdata">Data da Última alteração</label><br>
-                <input type="text" id="ftdata" name="ftdata" value="" size="11" placeholder="Data"><br>
+                <input type="text" id="ftdata" name="ftdata" value="<?=$ftdata;?>" size="11" placeholder="Data"><br>
                         </td><td>
                 <label for="ftemitente">Emitente</label><br>
-                <input type="text" id="ftemitente" name="ftemitente" value="" size="15" placeholder="Nome resp."><br>
+                <input type="text" id="ftemitente" name="ftemitente" value="<?=$ftemitente;?>" size="15" placeholder="Nome resp."><br>
                         </td>
                         <td>
                             <br>
-                        <input type="button" value="Imprimir Ficha Técnica">                            
+                        <input type="button" value="Imprimir Ficha Técnica" OnClick="javaPrintFT();">                            
                         </td>
                     </tr>
                 </table>
