@@ -21,7 +21,10 @@ if ($prod_cod != '') {
     //carregar o campo opnum e op_id com "NEW" e travar opnum
 }
 
-$cabec = file_get_contents('cabec.php');
+include_once('cabec.php');
+//$cabec = file_get_contents('cabec.php');
+include_once('materiaprima.php');
+//$mp = file_get_contents('materiaprima.php');
 $colam = file_get_contents('colaminadora.php');
 $cs = file_get_contents('cortesolda.php');
 $bol = file_get_contents('bolha.php');
@@ -29,7 +32,7 @@ $emb = file_get_contents('embalagem.php');
 $ft  = file_get_contents('fichatecnica.php');
 $mperf = file_get_contents('microperfuradeira.php');
 $reb = file_get_contents('rebobinadeira.php');
-$mp = file_get_contents('materiaprima.php');
+
 $ext = file_get_contents('extrusora.php');
 $imp = file_get_contents('impressora.php');
 
