@@ -21,20 +21,209 @@ if ($prod_cod != '') {
     //carregar o campo opnum e op_id com "NEW" e travar opnum
 }
 
+/**
+ * cabeçalho
+ * $prod_cod
+ * $prod_desc
+ * $pedido
+ * $qtdade
+ * $uni
+ * $cliente
+ * $pedcli
+ * $prodcli
+ * $op_id
+ * $op_prazo
+ * $ophabilita
+ */
+
+/**
+ * ficha técnica
+ * $ftdesenv
+ * $ftgtin
+ * $ftimpobs
+ * $ftobs
+ * $ftlargmin
+ * $ftlargnom
+ * $ftlargmax
+ * $ftespesmin
+ * $ftespesnom
+ * $ftespesmax
+ * $ftgrammin
+ * $ftgramnom
+ * $ftgrammax
+ * $ftcompmin
+ * $ftcompnom
+ * $ftcompmax
+ * $ftabamin
+ * $ftabanom
+ * $ftabamax
+ * $ftsanfmin
+ * $ftsanfnom
+ * $ftsanfmax
+ * $ftpesomin
+ * $ftpesonom
+ * $ftpesomax
+ * $ftsolda
+ * $ftimp
+ * $ftalert
+ * $ftversao
+ * $ftdata
+ * $ftemitente
+ */
+
+/**
+ * materias-primas
+ * $codmp1p
+ * $pmp1p
+ * $qmp1p
+ * $codmp2p
+ * $pmp2p
+ * $qmp2p
+ * $codmp3p
+ * $pmp3p
+ * $qmp3p
+ * $codmp4p
+ * $pmp4p
+ * $qmp4p
+ * $codmp5p
+ * $pmp5p
+ * $qmp5p
+ * $codmp6p
+ * $pmp6p
+ * $qmp6p
+ * $codmp7p
+ * $pmp7p
+ * $qmp7p
+ * $codmp8p
+ * $pmp8p
+ * $qmp8p
+ * 
+ * $codmp1u
+ * $pmp1u
+ * $qmp1u
+ * $codmp2u
+ * $pmp2u
+ * $qmp2u
+ * $codmp3u
+ * $pmp3u
+ * $qmp3u
+ * $codmp4u
+ * $pmp4u
+ * $qmp4u
+ * $codmp5u
+ * $pmp5u
+ * $qmp5u
+ * $codmp6u
+ * $pmp6u
+ * $qmp6u
+ * $codmp7u
+ * $pmp7u
+ * $qmp7u
+ * $codmp8u
+ * $pmp8u
+ * $qmp8u
+ */
+
+/**
+ * extrusora
+ * $extlargmin
+ * $extlargnom
+ * $extlargmax
+ * $extespesmin
+ * $extespesnom
+ * $extespesmax
+ * $extsanfmin
+ * $extsanfnom
+ * $extsanfmax
+ * $extgmmin
+ * $extgmnom
+ * $extgmmax
+ * $extmatriz
+ * $extrazsopro
+ * $exttipobob
+ * $extmaq
+ * $extmettot
+ * $extnumbob
+ * $extmetbob
+ * $extpesotot
+ * $extpesobob
+ * $extdiammax
+ * $extprtvde
+ * $extperdas
+ * $exttratamento
+ * $extmapa1
+ * $extmapa2
+ * $extmapa3
+ * $extmapa4
+ * $extmapa5
+ * $extmapa6
+ * $extmapa7
+ * $extmapa8
+ * $extobs
+ */
+
+/**
+ * impressora
+ * $impcilindro
+ * $impsentidobob
+ * $impprtvde
+ * $impperdas
+ * $impmaq
+ * $impobs
+ */
+
+/**
+ * colaminadora
+ * $colamlargmin
+ * $colamlargnom
+ * $colamlargmax
+ * $colamcompmin
+ * $colamcompnom
+ * $colamcompmax
+ * $colamdesc
+ * $colamtubete
+ * $colammaq
+ * $colamobs
+ */
+
+/**
+ * rebobinaderia
+ * $reblargmin
+ * $reblargnom
+ * $reblargmax
+ * $reblargini
+ * $rebsentidobob
+ * $rebdiamax
+ * $rebmetbob
+ * $rebpesobob
+ * $rebmaq
+ * $rebobs
+ */
+
 include_once('cabec.php');
 //$cabec = file_get_contents('cabec.php');
+include_once('fichatecnica.php');
+//$ft  = file_get_contents('fichatecnica.php');
 include_once('materiaprima.php');
 //$mp = file_get_contents('materiaprima.php');
-$colam = file_get_contents('colaminadora.php');
-$cs = file_get_contents('cortesolda.php');
+include_once('extrusora.php');
+//$ext = file_get_contents('extrusora.php');
+include_once('impressora.php');
+//$imp = file_get_contents('impressora.php');
+include_once('colaminadora.php');
+//$colam = file_get_contents('colaminadora.php');
+include_once('rebobinadeira.php');
+//$reb = file_get_contents('rebobinadeira.php');
 $bol = file_get_contents('bolha.php');
-$emb = file_get_contents('embalagem.php');
-$ft  = file_get_contents('fichatecnica.php');
 $mperf = file_get_contents('microperfuradeira.php');
-$reb = file_get_contents('rebobinadeira.php');
+$cs = file_get_contents('cortesolda.php');
+$emb = file_get_contents('embalagem.php');
 
-$ext = file_get_contents('extrusora.php');
-$imp = file_get_contents('impressora.php');
+
+
+
+
+
 
 
 $html .= '<!doctype html>';
