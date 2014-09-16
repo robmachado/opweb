@@ -214,13 +214,14 @@ include_once('colaminadora.php');
 //$colam = file_get_contents('colaminadora.php');
 include_once('rebobinadeira.php');
 //$reb = file_get_contents('rebobinadeira.php');
-$bol = file_get_contents('bolha.php');
-$mperf = file_get_contents('microperfuradeira.php');
-$cs = file_get_contents('cortesolda.php');
-$emb = file_get_contents('embalagem.php');
-
-
-
+include_once('bolha.php');
+//$bol = file_get_contents('bolha.php');
+include_once('microperfuradeira.php');
+//$mperf = file_get_contents('microperfuradeira.php');
+include_once('cortesolda.php');
+//$ces = file_get_contents('cortesolda.php');
+include_once('embalagem.php');
+//$emb = file_get_contents('embalagem.php');
 
 
 
@@ -234,7 +235,7 @@ $html .= '<title>Ordem de Producao</title>';
 $html .= '<link rel="stylesheet" href="../../libs/jquery/themes/smoothness/jquery-ui.css">';
 $html .= '<script src="../../libs/jquery/jquery-2.1.1.js"></script>';
 $html .= '<script src="../../libs/jquery/jquery-ui-1.11.0/jquery-ui.js"></script>';
-$html .= '<link rel="stylesheet" href="style.css">';
+$html .= '<link rel="stylesheet" href="../../images/style.css">';
 $html .= '<script>';
 $html .= '   $(function() {';
 $html .= '      $( "#tabs" ).tabs();';
@@ -253,7 +254,7 @@ $html .= '<li><a href="#ext">Extrusão</a></li>';
 $html .= '<li><a href="#imp">Impressão</a></li>';
 $html .= '<li><a href="#bol">Bolha</a></li>';
 $html .= '<li><a href="#reb">Rebobinadeira</a></li>';
-$html .= '<li><a href="#cs">Corte/Solda</a></li>';
+$html .= '<li><a href="#ces">Corte/Solda</a></li>';
 $html .= '<li><a href="#colam">Co-Laminadora</a></li>';
 $html .= '<li><a href="#mperf">Micro-Perfuradeira</a></li>';
 $html .= '<li><a href="#emb">Embalagem</a></li>';
@@ -276,8 +277,8 @@ $html .= '</div>';
 $html .= '<div id="reb">';
 $html .= $reb;
 $html .= '</div>';
-$html .= '<div id="cs">';
-$html .= $cs;
+$html .= '<div id="ces">';
+$html .= $ces;
 $html .= '</div>';
 $html .= '<div id="colam">';
 $html .= $colam;

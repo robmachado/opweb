@@ -1,4 +1,6 @@
-<table>
+<?php
+
+$ces = '<table>
     <tr>
         <td>
             <label for="cslargmin">Largura Mínina</label><br>
@@ -63,4 +65,4 @@
             <textarea name="csobs" id="csobs" maxlength="500" rows="6" cols="60" placeholder="Observações do Corte e Solda, esse campo será impresso na OP"></textarea>
         </td>
     </tr>
-</table>
+</table>';

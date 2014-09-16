@@ -1,4 +1,6 @@
-      <table>
+<?php
+
+$bol = '<table>
           <tr>
             <td>
                 <label for="bollargmin">Largura Mínina</label><br>
@@ -43,4 +45,4 @@
                 <textarea name="bolobs" id="bolobs" maxlength="500" rows="6" cols="80" placeholder="Observações da maquina de bolha, esse campo será impresso na OP"></textarea>
             </td>
           </tr>
-      </table>
+      </table>';

@@ -1,4 +1,6 @@
-<table>
+<?php
+
+$emb = '<table>
     <tr>
         <td>
             <label for="embpknumpc">Pacotes com</label><br>
@@ -16,4 +18,4 @@
             <textarea name="embobs" id="embobs" maxlength="500" rows="6" cols="80" placeholder="Observações da embalagem, esse campo será impresso na OP"></textarea>
         </td>
     </tr>
-</table>
+</table>';
