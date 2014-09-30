@@ -29,14 +29,14 @@
         "ext-curl": "*",
         "ext-soap": "*",
         "ext-gd": "*",
-        "ext-mcrypt": "*",
         "ext-openssl": "*",
         "ext-zip": "*",
         "ext-zlib": "*",
         "ext-fileinfo": "*",
         "ext-iconv": "*",
         "ext-mbstring": "*",
-        "ensepar/tcpdf": "dev-master"
+        "ensepar/tcpdf": "dev-master",
+        "mpdf/mpdf": "dev-master"
     },
     "require-dev": {
         "ext-xdebug": "*",

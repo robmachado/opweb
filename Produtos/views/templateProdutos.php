@@ -33,7 +33,8 @@ $tipo = array('00'=>'Mercadoria para Revenda',
     $(document).ready(function(){
         $("button").click(function(){
             //$("#ft").toggle();
-            //$("#ft").remove();
+            $("#ft").remove();
+            $("#mp").remove();
         });
     });
   </script>
