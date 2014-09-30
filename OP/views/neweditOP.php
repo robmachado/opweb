@@ -201,28 +201,16 @@ if ($prod_cod != '') {
  */
 
 include_once('cabec.php');
-//$cabec = file_get_contents('cabec.php');
 include_once('fichatecnica.php');
-//$ft  = file_get_contents('fichatecnica.php');
 include_once('materiaprima.php');
-//$mp = file_get_contents('materiaprima.php');
 include_once('extrusora.php');
-//$ext = file_get_contents('extrusora.php');
 include_once('impressora.php');
-//$imp = file_get_contents('impressora.php');
 include_once('colaminadora.php');
-//$colam = file_get_contents('colaminadora.php');
 include_once('rebobinadeira.php');
-//$reb = file_get_contents('rebobinadeira.php');
 include_once('bolha.php');
-//$bol = file_get_contents('bolha.php');
 include_once('microperfuradeira.php');
-//$mperf = file_get_contents('microperfuradeira.php');
 include_once('cortesolda.php');
-//$ces = file_get_contents('cortesolda.php');
 include_once('embalagem.php');
-//$emb = file_get_contents('embalagem.php');
-
 
 
 
