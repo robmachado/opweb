@@ -8,7 +8,9 @@ $reb = '<table>
             <label for="reblargnom">Largura Nominal</label><br>
             <input class="right" type="text" id="reblargnom" name="reblargnom" value="'.$reblargnom.'" size="8" placeholder="0,00">mm<br>
             <label for="reblargmax">Largura Máxima</label><br>
-            <input class="right" type="text" id="reblargmax" name="reblargmax" value="'.$reblargmax.'" size="8" placeholder="0,00">mm<br>
+            <input class="right" type="text" id="reblargmax" name="reblargmax" value="'.$reblargmax.'" size="8" placeholder="0,00">mm<br><br>
+            <label for="rebprtvde">Produtividade</label><br>
+            <input class="right" type="text" id="rebprtvde" name="rebprtvde" value="'.$rebprtvde.'" size="5" placeholder="0,0">kg/min<br>
         </td>
         <td width="10px"></td>
         <td>

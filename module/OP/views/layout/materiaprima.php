@@ -4,7 +4,7 @@
 
 $mp = '<table>
 <tr>
-    <th align="center">Padrão</th>
+    <th align="center">PADRÃO</th>
     <th></th>
     <th align="center">USADAS</th>
 </tr>
@@ -47,7 +47,7 @@ $mp = '<table>
     </td>
     <td></td>
     <td>
-    <fieldset>  
+    <fieldset>
     <label for="mp1">Matéria-Prima 1</label><br>
     <input type="text" id="codmp1u" name="codmp1u" value="'.$codmp1u.'" size="20" placeholder="Material">
     <input class="right" type="text" id="pmp1u" name="pmp1u" value="'.$pmp1u.'" size="5" placeholder="0,00">%
@@ -81,6 +81,9 @@ $mp = '<table>
     <input class="right" type="text" id="pmp8u" name="pmp8u" value="'.$pmp8u.'" size="5" placeholder="0,00">%
     <input class="right" type="text" id="qmp8u" name="qmp8u" value="'.$qmp8u.'" size="5" placeholder="0,00">kg<br>
     </fieldset>
+    </td>
+    <td></td>
+    <td>
     </td>
 </tr>
 </table>';

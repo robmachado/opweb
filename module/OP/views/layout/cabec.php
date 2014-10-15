@@ -1,6 +1,7 @@
 <?php
 
-$cabec = '<fieldset>
+$cabec = '
+<fieldset>
 <legend>Dados da OP</legend>
 <table>
 <tr>
@@ -35,15 +36,29 @@ $cabec = '<fieldset>
     <td>
     <label for="opnum">Número da OP</label><br>
     <input type="text" id="opnum" name="opnum" value="'.$op_id.'" '.$ophabilita.' placeholder="Número OP"><input type="button" id="btn_BuscaOP" name="btn_BuscaOP" value="Busca" OnClick="ajaxBuscaOP();"><br>
+    <label for="prazo">Data</label><br>
+    <input type="text" id="data" name="data" value="'.$op_data.'" placeholder="Data de Emissão"><br>
     <label for="prazo">Prazo de Entrega</label><br>
     <input type="text" id="op_prazo" name="op_prazo" value="'.$op_prazo.'" placeholder="Data de Entrega"><br>
+    </td>
+    <td>
+    <br><br><br><br>
+    <label for="status">Status</label><br>
+    <select name="status" id="status">
+        <option value="0">Aberta</option>
+        <option value="1">Encerrada</option>
+        <option value="2">Cancelada</option>
+    </select><br>
+    <label for="saldo">Saldo</label><br>
+    <input type="text" id="saldo" name="saldo" value="'.$op_saldo.'" placeholder="0,00 kg"><br>
     </td>
 </tr>
 <tr>
     <td><input type="submit" value="Gravar"></td>
-    <td><input type="button" value="Imprimir" OnClick="javaprint();"></td>
+    <td><input type="button" value="Imprimir" OnClick="javaprint();"><input type="checkbox" id="ftimp" name="ftimp" value="'.$ftimp.'">Incluir F.T. na OP</td>
     <td><input type="button" value="Limpar/Nova" OnClick="javaclean();"></td>
     <td><input type="button" value="Deletar" OnClick="javadelete();"></td>
+    <td></td>
 </tr>
 </table>
 </fieldset>';

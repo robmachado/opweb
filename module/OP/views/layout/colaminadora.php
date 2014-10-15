@@ -8,7 +8,9 @@ $colam = '<table>
         <label for="colamlargnom">Largura Nominal</label><br>
         <input class="right" type="text" id="colamlargnom" name="colamlargnom" value="'.$colamlargnom.'" size="8" placeholder="0,00">mm<br>
         <label for="colamlargmax">Largura Máxima</label><br>
-        <input class="right" type="text" id="colamlargmax" name="colamlargmax" value="'.$colamlargmax.'" size="8" placeholder="0,00">mm<br>
+        <input class="right" type="text" id="colamlargmax" name="colamlargmax" value="'.$colamlargmax.'" size="8" placeholder="0,00">mm<br><br>
+        <label for="colprtvde">Produtividade</label><br>
+        <input class="right" type="text" id="colprtvde" name="colprtvde" value="'.$colprtvde.'" size="5" placeholder="0,0">kg/min<br>
     </td>
     <td width="10px"></td>
     <td>

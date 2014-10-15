@@ -35,7 +35,7 @@
         "ext-fileinfo": "*",
         "ext-iconv": "*",
         "ext-mbstring": "*",
-        "ensepar/tcpdf": "dev-master",
+        "tecnick.com/tcpdf": "dev-master",
         "mpdf/mpdf": "dev-master"
     },
     "require-dev": {
