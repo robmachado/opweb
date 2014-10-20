@@ -226,6 +226,7 @@ $html .= '<script src="../../../../public/js/jquery/jquery-2.1.1.js"></script>';
 $html .= '<script src="../../../../public/js/jquery/jquery-ui-1.11.0/jquery-ui.js"></script>';
 $html .= '<link rel="stylesheet" href="../../../../public/css/style.css">';
 $html .= '<script src="javalocal.js"></script>';
+
 //$html .= '<script>';
 //$html .= '   $(function() {';
 //$html .= '      $( "#tabs" ).tabs();';

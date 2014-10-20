@@ -1,4 +1,53 @@
 <?php
+$opstatus = 0;
+$st0 = '';
+$st1 = '';
+$st2 = '';
+
+switch ($opstatus) {
+    case 0:
+        $st0 = 'selected ';
+        break;
+    case 1:
+        $st1 = 'selected ';
+        break;
+    case 2:
+        $st2 = 'selected ';
+        break;
+}
+$status = "<select name=\"opstatus\" id=\"opstatus\">
+        <option value=\"0\" $st0>Aberta</option>
+        <option value=\"1\" $st1>Encerrada</option>
+        <option value=\"2\" $st2>Cancelada</option>
+    </select>";
+
+$opuni = 'kg';
+$uskg = '';
+$usun = '';
+$usm = '';
+$usmq = '';
+switch ($opuni) {
+    case 'kg':
+        $uskg = 'selected ';
+        break;
+    case 'un':
+        $usun = 'selected ';
+        break;
+    case 'm':
+        $usm = 'selected ';
+        break;
+    case 'mq':
+        $usmq = 'selected ';
+        break;
+}
+$unidade = "<select name=\"opuni\" id=\"opuni\">
+        <option value=\"kg\" $uskg>kg</option>
+        <option value=\"un\" $usun>un/pç</option>
+        <option value=\"m\" $usm>metro</option>
+        <option value=\"mq\" $usmq>m&sup2;</option>
+    </select>
+";
+
 
 $cabec = '
 <fieldset>
@@ -17,13 +66,7 @@ $cabec = '
     <input type="text" id="pedido" name="pedido" value"'.$pedido.'" placeholder="Numero Pedido"><br>
     <label for="qtdade">Quantidade</label><br>
     <input class="right" type="text" id="qtdade" name="qtdade" value="'.$qtdade.'" placeholder="Quantidade"><br>
-    <label for="uni">Unidade</label><br>
-    <select name="uni" id="uni">
-        <option value="kg">kg</option>
-        <option value="un">un</option>
-        <option value="m">metro</option>
-        <option value="mq">m&sup2;</option>
-    </select>
+    <label for="uni">Unidade</label><br>'.$unidade.'
     </td>
     <td>
     <label for="client">Cliente</label><br>
@@ -43,12 +86,7 @@ $cabec = '
     </td>
     <td>
     <br><br><br><br>
-    <label for="status">Status</label><br>
-    <select name="status" id="status">
-        <option value="0">Aberta</option>
-        <option value="1">Encerrada</option>
-        <option value="2">Cancelada</option>
-    </select><br>
+    <label for="opstatus">Status</label><br>'.$status.'<br>
     <label for="saldo">Saldo</label><br>
     <input type="text" id="saldo" name="saldo" value="'.$op_saldo.'" placeholder="0,00 kg"><br>
     </td>

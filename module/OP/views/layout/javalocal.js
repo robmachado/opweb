@@ -27,6 +27,51 @@ $(document).ready( function () {
         var option = $(this).find("option:selected").val();
         $("#imgmperfsentbob").attr("src","bob/"+option+".png");
     });
-    
+    //*************************************
+    //ajax para edição do cadastro das MP
+    var url = "./ajaxGetCodMP.php";
+    var mps = new Array();
+    var source = function(request, response) 
+    {
+        $.ajax({
+            url: url,
+            dataType: "json",
+            datafields: [
+                        { name: 'codmp' },
+                        { name: 'idmp' },
+                        { name: 'descmp' },
+                        { name: 'fornecmp' },
+                        { name: 'codfornecmp' }
+                    ],
+            //data: {
+            //    q: request.term
+            //},
+            success: function( data ) {
+                for (var i = 0; i < data.length; i++) {
+                    mps.push({ cod: data[i].codmp, desc: data[i].descmp, id: data[i].ipmp, fornec: data[i].fornecmp, codfor: data[i].codfornecmp });
+                };
+                response( $.map( data, function( item ) {
+                    return {
+                        label: item.codmp,
+                        value: item.codmp
+                    }
+                }));
+            }
+	});
+    };
+    $( "#codmp" ).autocomplete({
+        source: source,
+        minLength: 2,
+	select: function( event, ui ) {
+            for (var i = 0; i < mps.length; i++) {                            
+                if (ui.item.label == mps[i].cod) {
+                    $('#descmp').val(mps[i].desc);
+                    $('#fornecmp').val(mps[i].fornec);
+                    $('#codfornecmp').val(mps[i].codfor);
+                }
+            }
+	}
+    });
+    //*************************************
 });
 

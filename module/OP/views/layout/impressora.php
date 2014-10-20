@@ -21,8 +21,6 @@ $imp = '<table>
             <td>
                 <label for="impcilindro">Cilindro</label><br>
                 <input type="text" id="impcilindro" name="impcilindro" value="'.$impcilindro.'" size="25" placeholder="Identificação do cilindro"><br>
-                <label for="impsentidobob">Sentido de Bobinamento</label><br>
-                <input type="text" id="impsentidobob" name="impsentidobob" value="'.$impsentidobob.'" size="25" placeholder="Sentido de Bobinamento"><br>
                 <label for="impprtvde">Produtividade</label><br>
                 <input class="right" type="text" id="impprtvde" name="impprtvde" value="'.$impprtvde.'" size="5" placeholder="0,0">kg/min<br>
                 <label for="impperdas">Perdas de Processo</label><br>

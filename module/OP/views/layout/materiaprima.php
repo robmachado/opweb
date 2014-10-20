@@ -5,8 +5,10 @@
 $mp = '<table>
 <tr>
     <th align="center">PADRÃO</th>
-    <th></th>
+    <th  width="5px"></th>
     <th align="center">USADAS</th>
+    <th  width="5px"></th>
+    <th align="center">Edita Matérias-Primas</th>
 </tr>
 <tr>
     <td>
@@ -45,7 +47,7 @@ $mp = '<table>
     <input class="right" type="text" id="qmp8p" name="qmp8p" value="'.$qmp8p.'" size="5" placeholder="0,00">kg<br>
     </fieldset>
     </td>
-    <td></td>
+    <td width="5px"></td>
     <td>
     <fieldset>
     <label for="mp1">Matéria-Prima 1</label><br>
@@ -82,8 +84,21 @@ $mp = '<table>
     <input class="right" type="text" id="qmp8u" name="qmp8u" value="'.$qmp8u.'" size="5" placeholder="0,00">kg<br>
     </fieldset>
     </td>
-    <td></td>
+    <td width="5px"></td>
     <td>
+    <fieldset>
+        <label for="codmp">Codigo da Matéria-Prima</label><br>
+        <input type="text" id="codmp" name="codmp" size="20" placeholder="Código da Matéria-Prima"><br>
+        <label for="descmp">Descrição da Matéria-Prima</label><br>
+        <textarea name="descmp" id="descmp" maxlength="500" rows="6" cols="60" placeholder="Descrição da Matéria-Prima"></textarea><br>
+        <label for="fornecmp">Fornecedor da Matéria-Prima</label><br>
+        <input type="text" id="fornecmp" name="fornecmp" value="" size="20" placeholder="Nome do Fornecedor"><br>
+        <label for="codfornecmp">Código do Fornecedor</label><br>
+        <input type="text" id="codfornecmp" name="codfornecmp" value="" size="20" placeholder="Código do Fornecedor"><br>
+        <input type="button" id="gravaMP" name="gravaMP" value="Grava" />
+        <input type="button" id="incMP" name="incMP" value="+" />        
+        <input type="button" id="delMP" name="delMP" value="Deleta" />
+    </fieldset>    
     </td>
 </tr>
 </table>';

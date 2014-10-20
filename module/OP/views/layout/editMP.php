@@ -28,12 +28,13 @@
                 };
                 //var dataAdapter = new $.jqx.dataAdapter(source);
                 var mps = new Array();
-                var dataAdapter = new $.jqx.dataAdapter(source, { autoBind: true, loadComplete: function (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        mps.push({ cod: data[i].codmp, desc: data[i].descmp, id: data[i].ipmp, fornec: data[i].fornecmp, codfor: data[i].codfornecmp });
-                    };
-                }
-                });
+                var dataAdapter = new $.jqx.dataAdapter(source, 
+                    { autoBind: true, loadComplete: function (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            mps.push({ cod: data[i].codmp, desc: data[i].descmp, id: data[i].ipmp, fornec: data[i].fornecmp, codfor: data[i].codfornecmp });
+                        };
+                    }
+                    });
                 $("#codmp").jqxInput({
                     source: dataAdapter, placeHolder: "Codigo da MP", displayMember: "codmp", width: 200, height: 25
                 });
