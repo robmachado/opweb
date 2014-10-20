@@ -1,4 +1,20 @@
 <?php
+$colsentbob = 6;
+$sentb = '<select name="colsentbob" id="colsentbob">';
+for ($x = 1; $x < 29; $x++) {
+    if ($x < 10) {
+        $t = str_pad($x, 2, '0', STR_PAD_LEFT);
+    } else {
+        $t = (string) $x;
+    }
+    $sel = '';
+    if ($colsentbob == $x) {
+        $sel = ' selected ';
+        $img = "bob/$t.png";
+    }
+    $sentb .= "<option value=\"$t\"$sel>$t</option>";
+}
+$sentb .= '</select>';
 
 $colam = '<table>
 <tr>
@@ -11,6 +27,8 @@ $colam = '<table>
         <input class="right" type="text" id="colamlargmax" name="colamlargmax" value="'.$colamlargmax.'" size="8" placeholder="0,00">mm<br><br>
         <label for="colprtvde">Produtividade</label><br>
         <input class="right" type="text" id="colprtvde" name="colprtvde" value="'.$colprtvde.'" size="5" placeholder="0,0">kg/min<br>
+        <label for="colperdas">Perdas de Processo</label><br>
+        <input class="right" type="text" id="colperdas" name="colperdas" value="'.$colperdas.'" size="5" placeholder="0000">%
     </td>
     <td width="10px"></td>
     <td>
@@ -34,6 +52,10 @@ $colam = '<table>
         <input type="text" id="colmaq" name="colmaq" value="'.$colammaq.'" size="25" placeholder="Identificação da Maquina"><br>
         <label for="colamobs">Observações</label><br>
         <textarea name="colamobs" id="colamobs" maxlength="500" rows="6" cols="80" placeholder="Observações da colaminadora, esse campo será impresso na OP">'.$colamobs.'</textarea>
+    </td>
+    <td>
+        <label for="colsentbob">Sentido do bobinamento</label><br>'.$sentb.'<br>
+        <img name="imgcolsentbob" id="imgcolsentbob" src="'.$img.'" alt="Sentido de bobinamento" height="140">    
     </td>
 </tr>
 </table>';

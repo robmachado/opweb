@@ -43,8 +43,16 @@ $bol = '<table>
             <td>
                 <label for="bolobs">Observações</label><br>
                 <textarea name="bolobs" id="bolobs" maxlength="500" rows="6" cols="80" placeholder="Observações da maquina de bolha, esse campo será impresso na OP"></textarea><br>
+                <table><tr><td>
                 <label for="bolprtvde">Produtividade</label><br>
                 <input class="right" type="text" id="bolprtvde" name="bolprtvde" value="'.$bolprtvde.'" size="5" placeholder="0,0">kg/min<br>
+                <td>
+                <td></td>
+                <td>
+                <label for="bolperdas">Perdas de Processo</label><br>
+                <input class="right" type="text" id="bolperdas" name="bolperdas" value="'.$bolprtvde.'" size="5" placeholder="00000">%<br>
+</td>
+                </tr></table>
             </td>
           </tr>
       </table>';

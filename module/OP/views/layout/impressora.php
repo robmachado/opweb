@@ -1,4 +1,20 @@
 <?php
+$impsentbob = 6;
+$sentb = '<select name="impsentbob" id="impsentbob">';
+for ($x = 1; $x < 29; $x++) {
+    if ($x < 10) {
+        $t = str_pad($x, 2, '0', STR_PAD_LEFT);
+    } else {
+        $t = (string) $x;
+    }
+    $sel = '';
+    if ($impsentbob == $x) {
+        $sel = ' selected ';
+        $img = "bob/$t.png";
+    }
+    $sentb .= "<option value=\"$t\"$sel>$t</option>";
+}
+$sentb .= '</select>';
 
 $imp = '<table>
           <tr>
@@ -17,6 +33,10 @@ $imp = '<table>
                 <input type="text" id="impmaq" name="impmaq" value="'.$impmaq.'" size="25" placeholder="Identificação da Maquina"><br>
                 <label for="impobs">Observações</label><br>
                 <textarea name="impobs" id="impobs" maxlength="500" rows="6" cols="80" placeholder="Observações da impressão, esse campo será impresso na OP">'.$impobs.'</textarea>
+            </td>
+            <td>
+                <label for="impsentbob">Sentido do bobinamento</label><br>'.$sentb.'<br>
+                <img name="imgimpsentbob" id="imgimpsentbob" src="'.$img.'" alt="Sentido de bobinamento" height="140">    
             </td>
           </tr>
       </table>';

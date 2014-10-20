@@ -23,7 +23,7 @@ $ft = '<table>
         </td>
         <td>
             <label for="ftobs">Observações</label><br>
-            <textarea name="ftobs" id="ftobs" maxlength="500" rows="6" cols="60" placeholder="Observações da ficha técnica esses dados não serão impressos a menos que indicado para">'.$ftobs.'</textarea>
+            <textarea name="ftobs" id="ftobs" maxlength="500" rows="4" cols="60" placeholder="Observações da ficha técnica esses dados não serão impressos a menos que indicado para">'.$ftobs.'</textarea>
         </td>
     </tr>
 </table>
@@ -142,7 +142,7 @@ $ft = '<table>
                 <label for="ftcodprod">Código do Produto</label><br>
                 <input type="text" id="ftcodprod" name="ftcodprod" value="'.$prod_cod.'" size="15" placeholder="código" disabled><br>
                 <label for="ftdesc">Descrição</label><br>
-                <textarea name="ftdesc" id="ftdesc" maxlength="100" rows="3" placeholder="Descrição do produto" disabled>'.$prod_desc.'</textarea>
+                <textarea name="ftdesc" id="ftdesc" maxlength="100" rows="2" placeholder="Descrição do produto" disabled>'.$prod_desc.'</textarea>
             </td>
             <td>
                 <label for="ftclient">Cliente</label><br>
@@ -159,13 +159,13 @@ $ft = '<table>
             </td>
             <td>
                 <label for="ftobs">Observações</label><br>
-                <textarea name="ftobs" id="ftobs" maxlength="500" rows="6" cols="60" placeholder="Observações da ficha técnica esses dados não serão impressos a menos que indicado para">'.$ftobs.'</textarea>
+                <textarea name="ftobs" id="ftobs" maxlength="500" rows="5" cols="60" placeholder="Observações da ficha técnica esses dados não serão impressos a menos que indicado para">'.$ftobs.'</textarea>
             </td>
             <td width="30%" rowspan="4">
                 <fieldset>
                 <p>Desenho</p>
                 <center>
-                    <img src="BB_gears.svg" alt="Engrenagens" height="340" width="142">
+                    <img src="BB_gears.svg" alt="Engrenagens" height="300">
                 </center>
                 </fieldset>
             </td>
@@ -246,15 +246,15 @@ $ft = '<table>
                     <tr>
                         <td>
                             <label for="ftsolda">Tipo de Solda</label><br>
-                            <textarea name="ftsolda" id="ftsolda" maxlength="500" rows="6" cols="40" placeholder="Observações para Corte/Solda">'.$ftsolda.'</textarea>
+                            <textarea name="ftsolda" id="ftsolda" maxlength="500" rows="3" cols="40" placeholder="Observações para Corte/Solda">'.$ftsolda.'</textarea>
                         </td>
                         <td>
                             <label for="ftimp">Impressão (cores)</label><br>
-                            <textarea name="ftimp" id="ftimp" maxlength="500" rows="6" cols="40" placeholder="Observações para Impressão">'.$ftimp.'</textarea>
+                            <textarea name="ftimp" id="ftimp" maxlength="500" rows="3" cols="40" placeholder="Observações para Impressão">'.$ftimp.'</textarea>
                         </td>
                         <td>
                             <label for="ftalert">Alertas</label><br>
-                            <textarea name="ftalert" id="ftalert" maxlength="500" rows="6" cols="40" placeholder="Observações de Alerta, esse campo será impresso na OP">'.$ftalert.'</textarea>
+                            <textarea name="ftalert" id="ftalert" maxlength="500" rows="3" cols="40" placeholder="Observações de Alerta, esse campo será impresso na OP">'.$ftalert.'</textarea>
                         </td>
                     </tr>
                 </table>

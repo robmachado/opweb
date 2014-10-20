@@ -2,6 +2,7 @@
 
 $op_id = 0;
 $prod_cod = '';
+$ano = date('Y');
 if (isset($_REQUEST['id'])) {
     $op_id = $_REQUEST['id'];
 }
@@ -224,11 +225,18 @@ $html .= '<link rel="stylesheet" href="../../../../public/js/jquery/themes/smoot
 $html .= '<script src="../../../../public/js/jquery/jquery-2.1.1.js"></script>';
 $html .= '<script src="../../../../public/js/jquery/jquery-ui-1.11.0/jquery-ui.js"></script>';
 $html .= '<link rel="stylesheet" href="../../../../public/css/style.css">';
-$html .= '<script>';
-$html .= '   $(function() {';
-$html .= '      $( "#tabs" ).tabs();';
-$html .= '   });';
-$html .= '</script>';
+$html .= '<script src="javalocal.js"></script>';
+//$html .= '<script>';
+//$html .= '   $(function() {';
+//$html .= '      $( "#tabs" ).tabs();';
+//$html .= '   });';
+//$html .= '   $(document).ready( function () {';
+//$html .= '      $("#extsentbob").change( function() {';
+//$html .= '        var option = $(this).find("option:selected").val();';
+//$html .= '        $("#imgextsentbob").attr("src","bob/"+option+".png");';
+//$html .= '      });';
+//$html .= '   });';
+//$html .= '</script>';
 $html .= '</head>';
 $html .= '<body>';
 $html .= '<form name="formOP" action="gravarOP.php" method="post">';
@@ -279,10 +287,7 @@ $html .= $emb;
 $html .= '</div>';
 $html .= '</div>';
 $html .= '</form>';
-$html .= '<footer>
-  <p>Todos os direitos reservados.</p>
-</footer>    
-</body>';
+$html .= '<footer><p>'.$ano.' - Plastfoam &copy; Todos os direitos reservados.</p></footer></body>';
 $html .= '</html>';
 
 echo $html;

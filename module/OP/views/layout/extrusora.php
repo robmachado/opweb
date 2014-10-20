@@ -1,4 +1,24 @@
 <?php
+$extsentbob = 6;
+$sentb = '<select name="extsentbob" id="extsentbob">';
+for ($x = 1; $x < 29; $x++) {
+    if ($x < 10) {
+        $t = str_pad($x, 2, '0', STR_PAD_LEFT);
+    } else {
+        $t = (string) $x;
+    }
+    $sel = '';
+    if ($extsentbob == $x) {
+        $sel = ' selected ';
+        $img = "bob/$t.png";
+    }
+    $sentb .= "<option value=\"$t\"$sel>$t</option>";
+}
+$sentb .= '</select>';
+$script = '
+<script>
+ //$("#imgextsentbob").attr("src","second.jpg");
+</script>';
 
 $ext = '<table>
           <tr>
@@ -65,7 +85,7 @@ $ext = '<table>
                 <label for="extpesotot">Peso Total</label><br>
                 <input class="right" type="text" id="extpesotot" name="extpesotot" value="'.$extpesotot.'" size="8" placeholder="0,00">kg<br>
                 <label for="extpesobob">Peso por Bobina</label><br>
-                <input class="right" type="text" id="extpesobob" name="extpesobob" value="'.$extpesobob.'" size="8" placeholder="0,00">kg<br>
+                <input class="right" type="text" id="extpesobob" name="extpesobob" value="'.$extpesobob.'" size="8" placeholder="0,00">kg
             </td>
             <td width="10px"></td>
             <td>
@@ -74,10 +94,10 @@ $ext = '<table>
                 <label for="extprtvde">Produtividade</label><br>
                 <input class="right" type="text" id="extprtvde" name="extprtvde" value="'.$extprtvde.'" size="5" placeholder="0,0">kg/min<br>
                 <label for="extperdas">Perdas de Processo</label><br>
-                <input class="right" type="text" id="extperdas" name="extperdas" value="'.$extperdas.'" size="8" placeholder="0,00">%<br>
+                <input class="right" type="text" id="extperdas" name="extperdas" value="'.$extperdas.'" size="8" placeholder="0,00">%
             </td>
             <td width="10px"></td>
-            <td>
+            <td colspan="1" rowspan="2">
                 <label for="exttratamento">Tratamento</label><br>
                 <input type="text" id="exttratamento" name="exttratamento" value="'.$exttratamento.'" size="25" placeholder="Tratamento de superficie"><br>
                 <label for="extmapa">Mapa de Tratamento</label><br>
@@ -88,11 +108,13 @@ $ext = '<table>
                 <input class="right" type="text" id="extmapa5" name="extmapa5" value="'.$extmapa5.'" size="3" placeholder="000">
                 <input class="right" type="text" id="extmapa6" name="extmapa6" value="'.$extmapa6.'" size="3" placeholder="000">
                 <input class="right" type="text" id="extmapa7" name="extmapa7" value="'.$extmapa7.'" size="3" placeholder="000">
-                <input class="right" type="text" id="extmapa8" name="extmapa8" value="'.$extmapa8.'" size="3" placeholder="000">
+                <input class="right" type="text" id="extmapa8" name="extmapa8" value="'.$extmapa8.'" size="3" placeholder="000"><br><br>
+                <label for="extsentbob">Sentido do bobinamento</label><br>'.$sentb.'<br>
+                <img name="imgextsentbob" id="imgextsentbob" src="'.$img.'" alt="Sentido de bobinamento" height="140">    
             </td>
           </tr>  
           <tr>
-            <td colspan="15">
+            <td colspan="14">
                 <label for="extpobs">Observações</label><br>
                 <textarea name="extpobs" id="extpobs" maxlength="500" rows="3" cols="120" placeholder="Observações da extrusão, esse campo será impresso na OP">'.$extobs.'</textarea>
             </td>
