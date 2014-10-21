@@ -41,14 +41,15 @@ $(document).ready( function () {
                         { name: 'idmp' },
                         { name: 'descmp' },
                         { name: 'fornecmp' },
-                        { name: 'codfornecmp' }
+                        { name: 'codfornecmp' },
+                        { name: 'densmp' },
                     ],
             //data: {
             //    q: request.term
             //},
             success: function( data ) {
                 for (var i = 0; i < data.length; i++) {
-                    mps.push({ cod: data[i].codmp, desc: data[i].descmp, id: data[i].ipmp, fornec: data[i].fornecmp, codfor: data[i].codfornecmp });
+                    mps.push({ cod: data[i].codmp, desc: data[i].descmp, id: data[i].ipmp, fornec: data[i].fornecmp, codfor: data[i].codfornecmp, densmp: data[i].densmp });
                 };
                 response( $.map( data, function( item ) {
                     return {
@@ -68,10 +69,38 @@ $(document).ready( function () {
                     $('#descmp').val(mps[i].desc);
                     $('#fornecmp').val(mps[i].fornec);
                     $('#codfornecmp').val(mps[i].codfor);
+                    $('#densmp').val(mps[i].densmp);
                 }
             }
 	}
     });
     //*************************************
+    //*************************************
+    // Cadastro de MP Ajax Post grava
+    $( "#gravaMP" ).click(function() {
+        alert("aqui!!!!");
+        var dados = {
+            codmp: $('#codmp').val(),
+            descmp: $('#descmp').val(),
+            fornecmp: $('#fornecmp').val(),
+            codfornecmp: $('#codfornecmp').val(),
+            densmp: $('#densmp').val()
+        };
+        $.post("./ajaxSaveMP.php", dados, function(data, status) {
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
+
+    //*************************************
 });
 
+//****************************
+// Cadastro de MP
+function limpaMP() {
+    $('#codmp').val('');
+    $('#descmp').val('');
+    $('#fornecmp').val('');
+    $('#codfornecmp').val('');
+    $('#densmp').val('');
+};
+//****************************

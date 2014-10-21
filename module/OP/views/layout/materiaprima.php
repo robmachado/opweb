@@ -95,8 +95,10 @@ $mp = '<table>
         <input type="text" id="fornecmp" name="fornecmp" value="" size="20" placeholder="Nome do Fornecedor"><br>
         <label for="codfornecmp">Código do Fornecedor</label><br>
         <input type="text" id="codfornecmp" name="codfornecmp" value="" size="20" placeholder="Código do Fornecedor"><br>
+        <label for="densmp">Densidade da Matéria-Prima</label><br>
+        <input class="right" type="text" id="densmp" name="densmp" value="" size="20" placeholder="Densidade em kg/m3">kg/m3<br>
         <input type="button" id="gravaMP" name="gravaMP" value="Grava" />
-        <input type="button" id="incMP" name="incMP" value="+" />        
+        <input type="button" id="incMP" name="incMP" value="+" onClick="limpaMP();" />        
         <input type="button" id="delMP" name="delMP" value="Deleta" />
     </fieldset>    
     </td>
