@@ -13,4 +13,15 @@ td {
 
 input.right{ 
          text-align:right; 
-} 
+}
+
+#formSearch {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:200px;
+    width:250px;
+    float:center;
+    padding:5px;
+    margin-left: auto;
+    margin-right: auto;
+}

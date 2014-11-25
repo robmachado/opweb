@@ -87,6 +87,7 @@ $mp = '<table>
     <td width="5px"></td>
     <td>
     <fieldset>
+        <input type="hidden" id="idmp" name="idmp" value="'.$idmp.'">
         <label for="codmp">Codigo da Matéria-Prima</label><br>
         <input type="text" id="codmp" name="codmp" size="20" placeholder="Código da Matéria-Prima"><br>
         <label for="descmp">Descrição da Matéria-Prima</label><br>
@@ -96,11 +97,11 @@ $mp = '<table>
         <label for="codfornecmp">Código do Fornecedor</label><br>
         <input type="text" id="codfornecmp" name="codfornecmp" value="" size="20" placeholder="Código do Fornecedor"><br>
         <label for="densmp">Densidade da Matéria-Prima</label><br>
-        <input class="right" type="text" id="densmp" name="densmp" value="" size="20" placeholder="Densidade em kg/m3">kg/m3<br>
+        <input class="right" type="text" id="densmp" name="densmp" value="" size="20" placeholder="Densidade em kg/m&sup3;">kg/m&sup3;<br>
         <input type="button" id="gravaMP" name="gravaMP" value="Grava" />
         <input type="button" id="incMP" name="incMP" value="+" onClick="limpaMP();" />        
         <input type="button" id="delMP" name="delMP" value="Deleta" />
     </fieldset>    
-    </td>
+    </td><td></td>
 </tr>
 </table>';
