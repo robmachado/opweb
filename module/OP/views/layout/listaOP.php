@@ -1,4 +1,5 @@
 <?php
+
 $dtIni = $_POST['dtIni'];
 $dtFim = $_POST['dtFim'];
 $flagOnlyOpen = $_POST['flagOnlyOpen'];
@@ -17,9 +18,9 @@ if ($flagOnlyOpen) {
     $filtro = " AND opstatus = '0'";
 }
 
-if (isset($dtIni) && isset($dtFim)) {
+if (isset($dtIni) && isset($dtFim) && $dtIni != '' && $dtFim != '') {
     $mydtIni = dt2my($dtIni);
-    $mydtFim = dt2my($dtFim); 
+    $mydtFim = dt2my($dtFim);
     $sqlComm = "SELECT * FROM OP WHERE dtEmis >= '$mydtIni' AND dtEmis <= '$mydtFim'$filtro ORDER BY opnum;";
 }
 
@@ -53,16 +54,22 @@ $html .= '  });';
 $html .= '  </script>';
 $html .= '</head>';
 $html .= '<body>';
-$html .= '<div id="formSearch">';
-$html .= '<fieldset>';
+$html .= '<center>';
+$html .= '<div>';
+$html .= '<table id="tblSearch" width="200px" bgcolor="#DDDDDD">';
+$html .= '<tr>';
+$html .= '<td>';
 $html .= '<form name="formLista" action="listaOP.php" method="post">';
-$html .= '<label>Data Inicio</label><br><input type="text" id="dtIni" name="dtIni" value="'.$dtIni.'"><br>';
-$html .= '<label>Data Fim</label><br><input type="text" id="dtFim" name="dtFim" value="'.$dtFim.'"><br>';
+$html .= '<label for="dtIni">Data Inicio</label><br><input type="text" id="dtIni" name="dtIni" value="'.$dtIni.'"><br>';
+$html .= '<label for="dtFim">Data Fim</label><br><input type="text" id="dtFim" name="dtFim" value="'.$dtFim.'"><br>';
 $html .= '<input type="checkbox" id="flagOnlyOpen" name="flagOnlyOpen" value="1"'. $flag.'>apenas OPs Abertas<br>';
 $html .= '<input type="submit" value="Buscar">';
 $html .= '</form>';
-$html .= '</fieldset>';
+$html .= '</td>';
+$html .= '</tr>';
+$html .= '</table>';
 $html .= '</div>';
+$html .= '</center>';
 $html .= "<h2>$sqlComm</h2>";
 $html .= '</body>';
 $html .= '</html>';
