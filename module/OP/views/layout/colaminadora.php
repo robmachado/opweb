@@ -25,10 +25,10 @@ $colam = '<table>
         <input class="right" type="text" id="colamlargnom" name="colamlargnom" value="'.$colamlargnom.'" size="8" placeholder="0,00">mm<br>
         <label for="colamlargmax">Largura Máxima</label><br>
         <input class="right" type="text" id="colamlargmax" name="colamlargmax" value="'.$colamlargmax.'" size="8" placeholder="0,00">mm<br><br>
-        <label for="colprtvde">Produtividade</label><br>
+        <label for="colprtvde">Produtividade (kg)</label><br>
         <input class="right" type="text" id="colprtvde" name="colprtvde" value="'.$colprtvde.'" size="5" placeholder="0,0">kg/min<br>
-        <label for="colperdas">Perdas de Processo</label><br>
-        <input class="right" type="text" id="colperdas" name="colperdas" value="'.$colperdas.'" size="5" placeholder="0000">%
+        <label for="colprtvdem">Produtividade (m)</label><br>
+        <input class="right" type="text" id="colprtvdem" name="colprtvdem" value="'.$colprtvdem.'" size="5" placeholder="0,0">m/min<br>
     </td>
     <td width="10px"></td>
     <td>
@@ -38,6 +38,8 @@ $colam = '<table>
         <input class="right" type="text" id="colamcompnom" name="colamcompnom" value="'.$colamcompnom.'" size="8" placeholder="0,00">mm<br>
         <label for="colamompmax">Comprimento Máximo</label><br>
         <input class="right" type="text" id="ftcompmax" name="colamcompmax" value="'.$colamcompmax.'" size="8" placeholder="0,00">mm<br>
+        <label for="colperdas">Perdas de Processo</label><br>
+        <input class="right" type="text" id="colperdas" name="colperdas" value="'.$colperdas.'" size="5" placeholder="0000">%
     </td>
     <td width="10px"></td>
     <td>

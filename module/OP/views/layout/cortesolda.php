@@ -9,6 +9,8 @@ $ces = '<table>
             <input class="right" type="text" id="cslargnom" name="cslargnom" value="" size="8" placeholder="0,00">mm<br>
             <label for="cslargmax">Largura Máxima</label><br>
             <input class="right" type="text" id="cslargmax" name="cslargmax" value="" size="8" placeholder="0,00">mm<br>
+            <label for="cspmax">Peso Máx. pç</label><br>
+            <input class="right" type="text" id="cspmax" name="cspmax" value="" size="8" placeholder="0,00000">kg<br>
         </td>
         <td width="5px"></td>
         <td>
@@ -18,6 +20,8 @@ $ces = '<table>
             <input class="right" type="text" id="csespesnom" name="csespesnom" value="" size="8" placeholder="0,00">mm<br>
             <label for="csespesmax">Espessura Máxima</label><br>
             <input class="right" type="text" id="csespesmax" name="csespesmax" value="" size="8" placeholder="0,00">mm<br>
+            <label for="cspnom">Peso Nom. pç</label><br>
+            <input class="right" type="text" id="cspnom" name="cspnom" value="'.$cspnom.'" size="8" placeholder="0,00000">kg<br>
         </td>
         <td width="5px"></td>
         <td>
@@ -27,6 +31,8 @@ $ces = '<table>
             <input class="right" type="text" id="cscompnom" name="cscompnom" value="" size="8" placeholder="0,00">mm<br>
             <label for="cscompmax">Comprimento Máximo</label><br>
             <input class="right" type="text" id="cscompmax" name="cscompmax" value="" size="8" placeholder="0,00">mm<br>
+            <label for="cspmin">Peso Min. pç</label><br>
+            <input class="right" type="text" id="cspmin" name="cspmin" value="'.$cspmin.'" size="8" placeholder="0,00000">kg<br>
         </td>
         <td width="5px"></td>
         <td>

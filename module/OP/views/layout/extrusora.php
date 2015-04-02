@@ -91,8 +91,10 @@ $ext = '<table>
             <td>
                 <label for="extdiammax">Diâmetro Máximo</label><br>
                 <input class="right" type="text" id="extdiammax" name="extdiammax" value="'.$extdiammax.'" size="8" placeholder="0,00">mm<br>
-                <label for="extprtvde">Produtividade</label><br>
+                <label for="extprtvde">Produtividade (kg)</label><br>
                 <input class="right" type="text" id="extprtvde" name="extprtvde" value="'.$extprtvde.'" size="5" placeholder="0,0">kg/min<br>
+                <label for="extprtvdem">Produtividade (m)</label><br>
+                <input class="right" type="text" id="extprtvdem" name="extprtvdem" value="'.$extprtvdem.'" size="5" placeholder="0,0">m/min<br>
                 <label for="extperdas">Perdas de Processo</label><br>
                 <input class="right" type="text" id="extperdas" name="extperdas" value="'.$extperdas.'" size="8" placeholder="0,00">%
             </td>

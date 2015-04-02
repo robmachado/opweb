@@ -25,10 +25,10 @@ $reb = '<table>
             <input class="right" type="text" id="reblargnom" name="reblargnom" value="'.$reblargnom.'" size="8" placeholder="0,00">mm<br>
             <label for="reblargmax">Largura Máxima</label><br>
             <input class="right" type="text" id="reblargmax" name="reblargmax" value="'.$reblargmax.'" size="8" placeholder="0,00">mm<br><br>
-            <label for="rebprtvde">Produtividade</label><br>
+            <label for="rebprtvde">Produtividade (kg)</label><br>
             <input class="right" type="text" id="rebprtvde" name="rebprtvde" value="'.$rebprtvde.'" size="5" placeholder="0,0">kg/min<br>
-            <label for="rebperdas">Perdas de processo</label><br>
-            <input class="right" type="text" id="rebperdas" name="rebperdas" value="'.$rebperdas.'" size="5" placeholder="00000">%
+            <label for="rebprtvdem">Produtividade (m)</label><br>
+            <input class="right" type="text" id="rebprtvdem" name="rebprtvdem" value="'.$rebprtvdem.'" size="5" placeholder="0,0">m/min<br>
         </td>
         <td width="10px"></td>
         <td>
@@ -40,6 +40,8 @@ $reb = '<table>
             <input class="right" type="text" id="rebmetbob" name="rebmetbob" value="'.$rebmetbob.'" size="8" placeholder="00000">m<br>
             <label for="rebpesobob">Peso por Bobina</label><br>
             <input class="right" type="text" id="rebpesobob" name="rebpesobob" value="'.$rebpesobob.'" size="8" placeholder="0,00">kg<br>
+            <label for="rebperdas">Perdas de processo</label><br>
+            <input class="right" type="text" id="rebperdas" name="rebperdas" value="'.$rebperdas.'" size="5" placeholder="00000">%                
         </td>
         <td width="10px"></td>
         <td>

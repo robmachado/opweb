@@ -201,6 +201,23 @@ if ($prod_cod != '') {
  * $rebobs
  */
 
+/**
+ * bolha
+ */
+
+/**
+ * microperfuradeira
+ */
+
+/**
+ * cortesolda
+ */
+
+/**
+ * embalagem
+ */
+
+
 include_once('cabec.php');
 include_once('fichatecnica.php');
 include_once('materiaprima.php');
@@ -212,9 +229,6 @@ include_once('bolha.php');
 include_once('microperfuradeira.php');
 include_once('cortesolda.php');
 include_once('embalagem.php');
-
-
-
 
 $html .= '<!doctype html>';
 $html .= '<html lang="pt_BR">';

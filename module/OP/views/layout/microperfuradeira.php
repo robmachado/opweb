@@ -24,10 +24,13 @@ $mperf = '<table>
             <label for="mperfobs">Observações</label><br>
             <textarea name="mperfobs" id="mperfobs" maxlength="500" rows="6" cols="80" placeholder="Observações da micro-perfuradeira, esse campo será impresso na OP"></textarea><br>
             <table><tr><td>
-            <label for="mperfprtvde">Produtividade</label><br>
+            <label for="mperfprtvde">Produtividade (kg)</label><br>
             <input class="right" type="text" id="mperfprtvde" name="mperfprtvde" value="'.$mperfprtvde.'" size="5" placeholder="0,0">kg/min
             </td>
-            <td></td>
+            <td>
+            <label for="mperfprtvdem">Produtividade (m)</label><br>
+            <input class="right" type="text" id="mperfprtvdem" name="mperfprtvdem" value="'.$mperfprtvdem.'" size="5" placeholder="0,0">m/min
+            </td>
             <td>
             <label for="mperfperdas">Perdas de Processo</label><br>
             <input class="right" type="text" id="mperfperdas" name="mperfperdas" value="'.$mperfprtvde.'" size="5" placeholder="0000">%

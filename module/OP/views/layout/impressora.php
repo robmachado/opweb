@@ -21,8 +21,10 @@ $imp = '<table>
             <td>
                 <label for="impcilindro">Cilindro</label><br>
                 <input type="text" id="impcilindro" name="impcilindro" value="'.$impcilindro.'" size="25" placeholder="Identificação do cilindro"><br>
-                <label for="impprtvde">Produtividade</label><br>
+                <label for="impprtvde">Produtividade (kg)</label><br>
                 <input class="right" type="text" id="impprtvde" name="impprtvde" value="'.$impprtvde.'" size="5" placeholder="0,0">kg/min<br>
+                <label for="impprtvdem">Produtividade (m)</label><br>
+                <input class="right" type="text" id="impprtvdem" name="impprtvdem" value="'.$impprtvdem.'" size="5" placeholder="0,0">m/min<br>                    
                 <label for="impperdas">Perdas de Processo</label><br>
                 <input class="right" type="text" id="impperdas" name="impperdas" value="'.$impperdas.'" size="8" placeholder="0,00">%<br>
             </td>  
