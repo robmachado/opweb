@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="../../jqwidgets/styles/jqx.base.css" type="text/css" />
     <link rel="stylesheet" href="../../jqwidgets/styles/jqx.classic.css" type="text/css" />
     <script type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>   
-	<script type="text/javascript" src="../../jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxcore.js"></script>
     <script type="text/javascript" src="../../jqwidgets/jqxbuttons.js"></script>
     <script type="text/javascript" src="../../jqwidgets/jqxscrollbar.js"></script>
     <script type="text/javascript" src="../../jqwidgets/jqxmenu.js"></script>
@@ -18,7 +18,7 @@
         $(document).ready(function () {
             // prepare the data
             var data = {};
-			var theme = 'classic';
+            var theme = 'classic';
             var firstNames = ["Nancy", "Andrew", "Janet", "Margaret", "Steven", "Michael", "Robert", "Laura", "Anne"];
             var lastNames = ["Davolio", "Fuller", "Leverling", "Peacock", "Buchanan", "Suyama", "King", "Callahan", "Dodsworth"];
             var titles = ["Sales Representative", "Vice President, Sales", "Sales Representative", "Sales Representative", "Sales Manager", "Sales Representative", "Sales Representative", "Inside Sales Coordinator", "Sales Representative"];
@@ -48,77 +48,77 @@
             var source =
             {
                  datatype: "json",
-				 cache: false,
+                 cache: false,
                  datafields: [
-					 { name: 'EmployeeID', type: 'string'},
-					 { name: 'FirstName', type: 'string'},
-					 { name: 'LastName', type: 'string'},
-					 { name: 'Title', type: 'string'},
-					 { name: 'Address', type: 'string'},
-					 { name: 'City', type: 'string'},
-					 { name: 'Country', type: 'string'},
-            		 { name: 'Notes', type: 'string'}
+                     { name: 'EmployeeID', type: 'string'},
+                     { name: 'FirstName', type: 'string'},
+                     { name: 'LastName', type: 'string'},
+                     { name: 'Title', type: 'string'},
+                     { name: 'Address', type: 'string'},
+                     { name: 'City', type: 'string'},
+                     { name: 'Country', type: 'string'},
+                     { name: 'Notes', type: 'string'}
                 ],
-				id: 'EmployeeID',
+                id: 'EmployeeID',
                 url: 'data.php',
-				cache: false,
+                cache: false,
                 addrow: function (rowid, rowdata, position, commit) {
                     // synchronize with the server - send insert command
-					var data = "insert=true&" + $.param(rowdata);
-					   $.ajax({
+                    var data = "insert=true&" + $.param(rowdata);
+                       $.ajax({
                             dataType: 'json',
                             url: 'data.php',
                             data: data,
-							cache: false,
+                            cache: false,
                             success: function (data, status, xhr) {
-							   // insert command is executed.
-								commit(true);
-							},
-							error: function(jqXHR, textStatus, errorThrown)
-							{
-								commit(false);
-							}
-						});							
-			    },
+                               // insert command is executed.
+                                commit(true);
+                            },
+                            error: function(jqXHR, textStatus, errorThrown)
+                            {
+                                commit(false);
+                            }
+                        });                            
+                },
                 deleterow: function (rowid, commit) {
                     // synchronize with the server - send delete command
-            		   var data = "delete=true&" + $.param({EmployeeID: rowid});
-				       $.ajax({
+                       var data = "delete=true&" + $.param({EmployeeID: rowid});
+                       $.ajax({
                             dataType: 'json',
                             url: 'data.php',
-							cache: false,
+                            cache: false,
                             data: data,
                             success: function (data, status, xhr) {
-							   // delete command is executed.
-							   commit(true);
-							},
-							error: function(jqXHR, textStatus, errorThrown)
-							{
-								commit(false);
-							}
-						});							
-			   },
+                               // delete command is executed.
+                               commit(true);
+                            },
+                            error: function(jqXHR, textStatus, errorThrown)
+                            {
+                                commit(false);
+                            }
+                        });                            
+               },
                 updaterow: function (rowid, rowdata, commit) {
-			        // synchronize with the server - send update command
-            		   var data = "update=true&" + $.param(rowdata);
-					      $.ajax({
+                    // synchronize with the server - send update command
+                       var data = "update=true&" + $.param(rowdata);
+                          $.ajax({
                             dataType: 'json',
                             url: 'data.php',
-							cache: false,
+                            cache: false,
                             data: data,
                             success: function (data, status, xhr) {
-							  // update command is executed.
-						 	  commit(true);
-							},
-							error: function(jqXHR, textStatus, errorThrown)
-							{
-							  commit(false);
-							}							
-						});		
+                              // update command is executed.
+                               commit(true);
+                            },
+                            error: function(jqXHR, textStatus, errorThrown)
+                            {
+                              commit(false);
+                            }                            
+                        });        
                 }
             };
-			
-			 var dataAdapter = new $.jqx.dataAdapter(source);
+            
+             var dataAdapter = new $.jqx.dataAdapter(source);
             // initialize jqxGrid
             $("#jqxgrid").jqxGrid(
             {
@@ -156,7 +156,7 @@
             $("#addrowbutton").bind('click', function () {
                 var rowscount = $("#jqxgrid").jqxGrid('getdatainformation').rowscount;
                 var datarow = generaterow(rowscount + 1);
-		         $("#jqxgrid").jqxGrid('addrow', null, datarow);
+                 $("#jqxgrid").jqxGrid('addrow', null, datarow);
             });
 
             // delete row.

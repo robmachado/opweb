@@ -13,8 +13,8 @@
     <script type="text/javascript" src="../../jqwidgets/jqxdropdownlist.js"></script>
     <script type="text/javascript" src="../../jqwidgets/jqxgrid.js"></script>
     <script type="text/javascript" src="../../jqwidgets/jqxgrid.pager.js"></script>
-    <script type="text/javascript" src="../../jqwidgets/jqxgrid.selection.js"></script>	
-    <script type="text/javascript" src="../../jqwidgets/jqxdata.js"></script>	
+    <script type="text/javascript" src="../../jqwidgets/jqxgrid.selection.js"></script>    
+    <script type="text/javascript" src="../../jqwidgets/jqxdata.js"></script>    
     <script type="text/javascript">
         $(document).ready(function () {
             // prepare the data
@@ -24,36 +24,36 @@
             {
                  datatype: "json",
                  datafields: [
-					 { name: 'CompanyName', type: 'string'},
-					 { name: 'ContactName', type: 'string'},
-					 { name: 'ContactTitle', type: 'string'},
-					 { name: 'Address', type: 'string'},
-					 { name: 'City', type: 'string'},
-					 { name: 'Country', type: 'string'}
+                     { name: 'CompanyName', type: 'string'},
+                     { name: 'ContactName', type: 'string'},
+                     { name: 'ContactTitle', type: 'string'},
+                     { name: 'Address', type: 'string'},
+                     { name: 'City', type: 'string'},
+                     { name: 'Country', type: 'string'}
                 ],
-			    url: 'data.php',
-				root: 'Rows',
-				beforeprocessing: function(data)
-				{		
-					source.totalrecords = data[0].TotalRows;
-				}
-            };		
-			
-		    var dataadapter = new $.jqx.dataAdapter(source);
+                url: 'data.php',
+                root: 'Rows',
+                beforeprocessing: function(data)
+                {        
+                    source.totalrecords = data[0].TotalRows;
+                }
+            };        
+            
+            var dataadapter = new $.jqx.dataAdapter(source);
 
             // initialize jqxGrid
             $("#jqxgrid").jqxGrid(
             {
                 width: 600,
-			    source: dataadapter,
+                source: dataadapter,
                 theme: theme,
-			    autoheight: true,
-				pageable: true,
-				virtualmode: true,
-				rendergridrows: function()
-				{
-					  return dataadapter.records;     
-				},
+                autoheight: true,
+                pageable: true,
+                virtualmode: true,
+                rendergridrows: function()
+                {
+                      return dataadapter.records;     
+                },
                 columns: [
                       { text: 'Company Name', datafield: 'CompanyName', width: 250 },
                       { text: 'Contact Name', datafield: 'ContactName', width: 200 },

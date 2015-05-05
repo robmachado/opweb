@@ -23,34 +23,34 @@
             var source =
             {
                 datatype: "json",
-			    datafields: [
-					 { name: 'EmployeeID', type: 'string'},
-					 { name: 'FirstName', type: 'string'},
-					 { name: 'LastName', type: 'string'},
-					 { name: 'Title', type: 'string'}
+                datafields: [
+                     { name: 'EmployeeID', type: 'string'},
+                     { name: 'FirstName', type: 'string'},
+                     { name: 'LastName', type: 'string'},
+                     { name: 'Title', type: 'string'}
                 ],
-				cache: false,
-				id: 'EmployeeID',
+                cache: false,
+                id: 'EmployeeID',
                 url: 'data.php',           
                 updaterow: function (rowid, rowdata, commit) {
-			        // synchronize with the server - send update command
+                    // synchronize with the server - send update command
                     var data = "update=true&FirstName=" + rowdata.FirstName + "&LastName=" + rowdata.LastName + "&Title=" + rowdata.Title;
-					data = data + "&EmployeeID=" + rowid;
-					
-					$.ajax({
-						dataType: 'json',
-						url: 'data.php',
-						type: 'POST',
-						data: data,
-						success: function (data, status, xhr) {
-							// update command is executed.
-							commit(true);
-						}
-					});		
+                    data = data + "&EmployeeID=" + rowid;
+                    
+                    $.ajax({
+                        dataType: 'json',
+                        url: 'data.php',
+                        type: 'POST',
+                        data: data,
+                        success: function (data, status, xhr) {
+                            // update command is executed.
+                            commit(true);
+                        }
+                    });        
                 }
             };
-			
-			var dataAdapter = new $.jqx.dataAdapter(source);
+            
+            var dataAdapter = new $.jqx.dataAdapter(source);
 
             // initialize the input fields.
             $("#firstName").jqxInput({width: 150, height: 23});
@@ -64,16 +64,16 @@
             $("#jqxgrid").jqxGrid(
             {
                 width: 600,
-                source: dataAdapter,	
+                source: dataAdapter,    
                 autoheight: true,
                 columns: [
-				  { text: 'EmployeeID', editable: false, datafield: 'EmployeeID', width: 100 },
-				  { text: 'First Name', columntype: 'dropdownlist', datafield: 'FirstName', width: 100 },
-				  { text: 'Last Name', columntype: 'dropdownlist', datafield: 'LastName', width: 100 },
-				  { text: 'Title', datafield: 'Title', width: 180 },
+                  { text: 'EmployeeID', editable: false, datafield: 'EmployeeID', width: 100 },
+                  { text: 'First Name', columntype: 'dropdownlist', datafield: 'FirstName', width: 100 },
+                  { text: 'Last Name', columntype: 'dropdownlist', datafield: 'LastName', width: 100 },
+                  { text: 'Title', datafield: 'Title', width: 180 },
                   { text: 'Edit', datafield: 'Edit', columntype: 'button', cellsrenderer: function () {
                      return "Edit";
-					 }, buttonclick: function (row) {
+                     }, buttonclick: function (row) {
                      // open the popup window when the user clicks a button.
                      editrow = row;
                      var offset = $("#jqxgrid").offset();
@@ -108,7 +108,7 @@
             $("#Save").click(function () {
                 if (editrow >= 0) {
                     var row = { FirstName: $("#firstName").val(), LastName: $("#lastName").val(), Title: $("#title").val()};
-                	
+                    
                     var rowID = $('#jqxgrid').jqxGrid('getrowid', editrow);
                     $('#jqxgrid').jqxGrid('updaterow', rowID, row);
                     $("#popupWindow").jqxWindow('close');
@@ -140,10 +140,10 @@
                         <td align="right">Title:</td>
                         <td align="left"><input id="title"/></td>
                     </tr>
-					<tr>
+                    <tr>
                         <td align="right"></td>
                         <td style="padding-top: 10px;" align="right"><input style="margin-right: 5px;" type="button" id="Save" value="Save" /><input id="Cancel" type="button" value="Cancel" /></td>
-                    </tr>          	
+                    </tr>              
                 </table>
             </div>
        </div>

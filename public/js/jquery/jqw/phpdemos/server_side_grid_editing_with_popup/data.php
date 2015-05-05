@@ -15,26 +15,26 @@ $query = "SELECT * FROM Employees";
 
 if (isset($_POST['update']))
 {
-	// UPDATE COMMAND 
-	$update_query = "UPDATE `Employees` SET `FirstName`='".mysql_real_escape_string($_POST['FirstName'])."',
-	`LastName`='".mysql_real_escape_string($_POST['LastName'])."',
-	`Title`='".mysql_real_escape_string($_POST['Title'])."' WHERE `EmployeeID`='".mysql_real_escape_string($_POST['EmployeeID'])."'";
-	 $result = mysql_query($update_query) or die("SQL Error 1: " . mysql_error());
+    // UPDATE COMMAND 
+    $update_query = "UPDATE `Employees` SET `FirstName`='".mysql_real_escape_string($_POST['FirstName'])."',
+    `LastName`='".mysql_real_escape_string($_POST['LastName'])."',
+    `Title`='".mysql_real_escape_string($_POST['Title'])."' WHERE `EmployeeID`='".mysql_real_escape_string($_POST['EmployeeID'])."'";
+     $result = mysql_query($update_query) or die("SQL Error 1: " . mysql_error());
      echo $result;
 }
 else
 {
     // SELECT COMMAND
-	$result = mysql_query($query) or die("SQL Error 1: " . mysql_error());
-	while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-		$employees[] = array(
-			'EmployeeID' => $row['EmployeeID'],
-			'FirstName' => $row['FirstName'],
-			'LastName' => $row['LastName'],
-			'Title' => $row['Title']
-		  );
-	}
-	 
-	echo json_encode($employees);
+    $result = mysql_query($query) or die("SQL Error 1: " . mysql_error());
+    while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+        $employees[] = array(
+            'EmployeeID' => $row['EmployeeID'],
+            'FirstName' => $row['FirstName'],
+            'LastName' => $row['LastName'],
+            'Title' => $row['Title']
+          );
+    }
+     
+    echo json_encode($employees);
 }
 ?>

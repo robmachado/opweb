@@ -26,15 +26,15 @@
             };
 
             var dataAdapter = new $.jqx.dataAdapter(source);
-			
-			$("#jqxlistbox").jqxListBox(
+            
+            $("#jqxlistbox").jqxListBox(
             {
                 source: dataAdapter,
                 theme: 'classic',
-				width: 200,
-				height: 250,
-				displayMember: 'CompanyName',
-				valueMember: 'ContactName'
+                width: 200,
+                height: 250,
+                displayMember: 'CompanyName',
+                valueMember: 'ContactName'
             });        
         });
     </script>

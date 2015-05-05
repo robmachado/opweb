@@ -1,3 +1,3 @@
 ﻿<?php
-	echo $_POST["list"];
+    echo $_POST["list"];
 ?>

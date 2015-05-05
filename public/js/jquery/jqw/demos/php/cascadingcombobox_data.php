@@ -10,7 +10,7 @@
   //Select The database
   $bool = mysql_select_db($database, $connect);
   if ($bool === False){
-	    print "can't find $database";
+        print "can't find $database";
   }
   
   if (isset($_GET['CustomerID']))
@@ -19,7 +19,7 @@
      $query = "SELECT * FROM Orders where CustomerID='" .$_GET['CustomerID'] . "'";
      $result = mysql_query($query) or die("SQL Error 1: " . mysql_error());
      while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-	       $orders[] = array(
+           $orders[] = array(
           'CustomerID' => $row['CustomerID'],
           'ShipCity' => $row['ShipCity'],
           'OrderID' => $row['OrderID'],
@@ -27,7 +27,7 @@
           'ShipName' => $row['ShipName'],
           'ShipAddress' => $row['ShipAddress'],
           'ShipCountry' => $row['ShipCountry']         
-	       );
+           );
      }
      
      echo json_encode($orders);
@@ -39,10 +39,10 @@
 
   $result = mysql_query($query) or die("SQL Error 1: " . mysql_error());
   while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-	  $customers[] = array(
+      $customers[] = array(
           'CustomerID' => $row['CustomerID'],
           'CompanyName' => $row['CompanyName']
-	       );
+           );
   }
 
   echo json_encode($customers);

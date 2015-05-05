@@ -9,7 +9,7 @@
     <script type="text/javascript" src="../../jqwidgets/jqxscrollbar.js"></script>
     <script type="text/javascript" src="../../jqwidgets/jqxdata.js"></script>
     <script type="text/javascript" src="../../jqwidgets/jqxlistbox.js"></script>
-	<script type="text/javascript" src="../../jqwidgets/jqxdropdownlist.js"></script>	
+    <script type="text/javascript" src="../../jqwidgets/jqxdropdownlist.js"></script>    
     <script type="text/javascript">
         $(document).ready(function () {
             // prepare the data
@@ -24,20 +24,20 @@
                     { name: 'City', type: 'string'}
                 ],
                 url: 'data.php',
-				cache: false
+                cache: false
             };
 
             var dataAdapter = new $.jqx.dataAdapter(source);
-			
-			$("#dropdownlist").jqxDropDownList(
+            
+            $("#dropdownlist").jqxDropDownList(
             {
                 source: dataAdapter,
                 theme: 'classic',
-				width: 200,
-				height: 25,
-				selectedIndex: 0,
-				displayMember: 'CompanyName',
-				valueMember: 'ContactName'
+                width: 200,
+                height: 25,
+                selectedIndex: 0,
+                displayMember: 'CompanyName',
+                valueMember: 'ContactName'
             });        
         });
     </script>

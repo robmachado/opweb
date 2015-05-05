@@ -1,6 +1,7 @@
 {
-    "name": "opweb",
-    "type": "application",
+    "name": "robmachado/opweb",
+    "version" :"1.0.0-dev",
+    "type": "project",
     "description": "Controle de OP para industria de embalagens plásticas",
     "keywords": [
         "OP",
@@ -43,6 +44,9 @@
         "phpunit/phpunit": "3.7.*"
     },        
     "autoload": {
+        "psr-4" : {
+          "robmachado\\opweb\\" :"src/"  
+        },
         "psr-0": {
             "": "src/"
         }

@@ -1,8 +1,8 @@
-﻿<?php	
-	$formData = array(
-		"firstname" => $_POST["firstName"],
-		"middlename" => $_POST["middleInitial"],
-		"lastname" => $_POST["lastName"],
+﻿<?php    
+    $formData = array(
+        "firstname" => $_POST["firstName"],
+        "middlename" => $_POST["middleInitial"],
+        "lastname" => $_POST["lastName"],
     "billingAddress" => $_POST["billingAddress"],
     "billingAddressLine2" => $_POST["billingAddressLine2"],
     "billingCity" => $_POST["billingCity"],
@@ -22,7 +22,7 @@
     "securityCode" => $_POST["securityCode"],
     "cardType" => $_POST["cardType"]
  );
-	
+    
   $response = "<table>";
   $response .= "<tr><th>Customer Details</th></tr>";
   $response .= "<tr><td>" . $formData['firstname'] . "</td><td>" .  $formData['middlename'] . "</td><td>" . $formData['lastname'] . "</td></tr>";

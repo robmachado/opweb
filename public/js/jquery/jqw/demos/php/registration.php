@@ -1,4 +1,4 @@
-﻿<?php	
+﻿<?php    
   // check whether the entered year is in the range of 1900 - 2012
   if (isset($_POST["birthInputYear"]))
   {  
@@ -15,18 +15,18 @@
      return;
   }  
   
-	$formData = array(
-		"username" => $_POST["username"],
-		"password" => $_POST["password"],
-		"realname" => $_POST["realname"],
+    $formData = array(
+        "username" => $_POST["username"],
+        "password" => $_POST["password"],
+        "realname" => $_POST["realname"],
     "birthdate" => $_POST["birthdate"],
     "email" => $_POST["email"],
     "ssn" => $_POST["ssn"],
     "phone" => $_POST["phone"],
     "zip" => $_POST["zip"],
-		"acceptterms" => $_POST["acceptterms"]
-	);
-	
+        "acceptterms" => $_POST["acceptterms"]
+    );
+    
   // check whether the terms are accepted.
   if($formData['acceptterms'] != 'true')
   {
@@ -51,5 +51,5 @@
      $response = "<p><h1>Registration Not Successful</h1></p><p>Invalid username or password.</p>";
   }
 
-	echo $response;
+    echo $response;
 ?>

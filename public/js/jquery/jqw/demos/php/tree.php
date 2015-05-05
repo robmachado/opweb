@@ -1,3 +1,3 @@
 ﻿<?php
-	echo $_POST["tree"];
+    echo $_POST["tree"];
 ?>

@@ -23,21 +23,21 @@
                     { name: 'Address', type: 'string'},
                     { name: 'City', type: 'string'}
                 ],
-				cache: false,
+                cache: false,
                 url: 'data.php'
             };
 
             var dataAdapter = new $.jqx.dataAdapter(source);
-			
-			$("#jqxcombobox").jqxComboBox(
+            
+            $("#jqxcombobox").jqxComboBox(
             {
                 source: dataAdapter,
                 theme: 'classic',
-				width: 200,
-				height: 25,
-				selectedIndex: 0,
-				displayMember: 'CompanyName',
-				valueMember: 'ContactName'
+                width: 200,
+                height: 25,
+                selectedIndex: 0,
+                displayMember: 'CompanyName',
+                valueMember: 'ContactName'
             });        
         });
     </script>
